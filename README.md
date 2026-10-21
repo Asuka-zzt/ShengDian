@@ -1,6 +1,12 @@
 # 省着点 · 生活省钱 Agent 原型
 
+## 快速体验
+
 无需构建、无需第三方依赖。直接打开 `dist/index.html`，或在本目录运行 `python3 -m http.server 4173 --bind 127.0.0.1` 后访问 `http://127.0.0.1:4173/dist/`。
+
+## 产品文档
+
+[查看 HTML PRD](docs/life-saving-agent-prd.html)。下载仓库后可用浏览器打开，支持打印为 PDF。
 
 ## 已实现的原型交互
 

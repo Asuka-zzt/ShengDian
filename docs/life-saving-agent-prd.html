@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>生活省钱 Agent · 产品需求文档</title>
+<style>
+:root{--bg:#f4f6f4;--paper:#fff;--ink:#182c28;--muted:#647670;--line:#dce5df;--green:#17684f;--light:#eaf4ee;--orange:#aa5b26;--warm:#fcf3e8}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:24px}body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.8 -apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif}a{color:var(--green);text-decoration:none}button{font:inherit;cursor:pointer}.layout{max-width:1500px;margin:auto;display:grid;grid-template-columns:245px minmax(0,1fr);gap:40px;padding:32px 44px 80px}aside{position:sticky;top:28px;height:calc(100vh - 56px);overflow:auto;padding:14px 12px 20px 0}.brand{font-size:19px;font-weight:800;letter-spacing:-.5px}.brand span{display:inline-grid;place-items:center;background:var(--green);color:white;width:30px;height:30px;border-radius:9px;margin-right:9px}.aside-label{font-size:11px;letter-spacing:2px;color:var(--muted);margin:24px 0 12px}nav a{display:block;color:var(--muted);font-size:13px;padding:7px 12px;border-left:2px solid var(--line)}nav a:hover{color:var(--green);background:var(--light);border-color:var(--green)}.print{border:1px solid var(--line);background:white;border-radius:8px;padding:8px 16px;margin-top:24px;color:var(--green)}main{min-width:0}header{padding:40px 44px;background:var(--ink);color:#fff;border-radius:20px;position:relative;overflow:hidden}header:after{content:'¥';position:absolute;right:25px;top:-50px;font-size:240px;line-height:1.4;color:#ffffff06;pointer-events:none}.eyebrow{font-size:11px;letter-spacing:3px;color:#a6d6b8;text-transform:uppercase}h1{font-size:42px;line-height:1.3;letter-spacing:-1.5px;margin:18px 0}header p{color:#c0d2c8;max-width:650px;margin:0 0 25px}.meta{display:flex;gap:8px;flex-wrap:wrap}.meta span{font-size:11px;border:1px solid #ffffff2b;padding:4px 12px;border-radius:30px;color:#dcece2}.overview{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin:22px 0}.stat{background:white;border:1px solid var(--line);padding:20px 24px;border-radius:12px}.stat strong{display:block;font-size:24px;color:var(--green)}.stat span{font-size:12px;color:var(--muted)}section{background:white;border:1px solid var(--line);border-radius:14px;padding:32px 36px;margin-top:22px}h2{font-size:23px;line-height:1.4;margin:0 0 22px;display:flex;align-items:center;gap:12px}h2 em{font-style:normal;font-size:11px;font-weight:600;background:var(--light);color:var(--green);padding:5px 8px;border-radius:6px;letter-spacing:1px}h3{font-size:17px;margin:26px 0 10px}h4{font-size:14px;margin:20px 0 8px}p{margin:10px 0}ul,ol{padding-left:22px}li{margin:5px 0}.lead{font-size:18px;line-height:1.8}.muted,.caption{color:var(--muted)}.caption{font-size:12px}.callout{background:var(--light);border-left:3px solid var(--green);padding:14px 18px;border-radius:0 8px 8px 0;margin:16px 0}.warn{background:var(--warm);border-color:var(--orange)}.grid2{display:grid;grid-template-columns:1fr 1fr;gap:18px}.box{border:1px solid var(--line);border-radius:10px;padding:18px 20px}.box h3{margin:0 0 10px}.tag{font-size:11px;padding:2px 7px;border-radius:4px;background:var(--light);color:var(--green);white-space:nowrap}.tag.wait{background:var(--warm);color:var(--orange)}.table-wrap{overflow-x:auto;margin:12px 0}table{border-collapse:collapse;width:100%;font-size:13px;line-height:1.7}th,td{text-align:left;padding:12px 13px;border-bottom:1px solid var(--line);vertical-align:top}th{background:#f4f7f4;color:#53685d;font-size:12px;font-weight:600}tr:last-child td{border-bottom:0}td:first-child{font-weight:600}code{font-family:ui-monospace,SFMono-Regular,monospace;background:#f0f4f1;padding:2px 5px;border-radius:4px;font-size:12px;overflow-wrap:anywhere}.formula{background:#18382d;color:#e3f2e9;padding:20px 22px;border-radius:10px;font:13px/2 ui-monospace,SFMono-Regular,monospace;margin:14px 0}.flow{display:flex;align-items:stretch;gap:8px;margin:18px 0;flex-wrap:wrap}.flow div{flex:1;min-width:110px;border:1px solid var(--line);border-radius:8px;padding:13px;text-align:center;font-size:13px;background:#f8faf8}.flow b{display:block;color:var(--green);font-size:10px;letter-spacing:1px}.flow i{align-self:center;font-style:normal;color:#91a299}.mock{background:#f6f8f6;border:1px solid var(--line);border-radius:12px;padding:22px}.mock-top{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:18px}.mock-title{font-size:18px;font-weight:700}.mock-action{border:0;background:var(--green);color:white;padding:8px 13px;border-radius:7px;font-size:12px}.mock .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}.mock .card{background:white;border:1px solid var(--line);border-radius:8px;padding:13px}.mock .card b{display:block;font-size:22px}.mock .card small{color:var(--muted)}.mock-row{background:white;border:1px solid var(--line);border-radius:8px;padding:15px;margin-top:12px;display:flex;justify-content:space-between;gap:10px;align-items:center}.mock-price{color:var(--green);font-size:23px;font-weight:700;white-space:nowrap}.search-demo{background:white;border:1px solid var(--line);padding:12px 16px;border-radius:8px;color:var(--muted)}.footer{padding:28px 4px;color:var(--muted);font-size:12px;display:flex;justify-content:space-between;gap:20px}.check{color:var(--green);font-weight:700}.small{font-size:13px}.anchor{font-weight:600}.decision{font-weight:600;color:var(--green)}
+@media(min-width:1500px){.layout{gap:55px}}@media(max-width:1000px){.layout{grid-template-columns:190px minmax(0,1fr);padding:22px;gap:20px}section{padding:25px}header{padding:32px}h1{font-size:34px}}@media(max-width:760px){.layout{display:block;padding:16px}aside{position:static;height:auto;padding:0 0 18px}nav,.aside-label{display:none}.print{margin:10px 0 0}.overview{gap:8px}.stat{padding:14px}.stat strong{font-size:20px}.grid2{grid-template-columns:1fr}section{padding:23px 18px}header{padding:28px 23px}h1{font-size:30px}.mock{padding:14px}.mock .cards{grid-template-columns:1fr}.mock-row{align-items:flex-start}.flow i{display:none}h2{font-size:21px}}
+@media print{@page{size:A4;margin:15mm}body{font-size:10pt;background:#fff;color:#111}.layout{display:block;padding:0;max-width:none}aside,.print{display:none}header{background:#edf4ef!important;color:#17382a;padding:25px;border-radius:0}header p,.eyebrow,.meta span{color:#365c48}.meta span{border-color:#b8c9be}h1{font-size:28pt}header:after{display:none}section{border:0;border-top:1px solid #ccd8ce;border-radius:0;padding:22px 0;margin-top:12px}h2,h3,h4{break-after:avoid}tr,.box,.stat,.mock-row,.callout{break-inside:avoid}thead{display:table-header-group}.formula{background:#edf4ef;color:#17382a}.table-wrap{overflow:visible}table{font-size:9pt}.caption{font-size:9pt}a{color:inherit}.overview{margin:16px 0}.footer{font-size:8pt}}
+</style>
+</head>
+<body>
+<div class="layout">
+<aside>
+<div class="brand"><span>省</span>生活省钱 Agent</div>
+<div class="aside-label">PRODUCT REQUIREMENTS</div>
+<nav aria-label="文档目录">
+<a href="#overview">01 · 产品定位</a><a href="#scope">02 · 首版范围</a><a href="#journeys">03 · 用户流程</a><a href="#bills">04 · 账单导入</a><a href="#assets">05 · 资产与日均成本</a><a href="#comparison">06 · 多平台比价</a><a href="#platforms">07 · 电商平台管理</a><a href="#screens">08 · 页面与交互示意</a><a href="#agent">09 · Agent 行为边界</a><a href="#data">10 · 数据模型</a><a href="#quality">11 · 非功能需求</a><a href="#acceptance">12 · 验收标准</a><a href="#metrics">13 · 指标与埋点</a><a href="#delivery">14 · 实施与待定项</a>
+</nav>
+<button class="print" onclick="window.print()">打印 / 保存为 PDF</button>
+<p class="caption">PRD v1.0 · 2026.10.20<br>状态：需求评审稿<br>优先级：P0 必须 / P1 增强</p>
+</aside>
+<main>
+<header>
+<div class="eyebrow">LIFE SAVING AGENT / MVP PRD</div>
+<h1>买之前比价，<br>买之后算清每天花多少。</h1>
+<p>围绕账单、实物资产和商品比价，建立一条可追溯的生活省钱决策链。首版只解决两个问题：已有物品的使用成本，以及准备购买商品的最低可购价格。</p>
+<div class="meta"><span>版本 1.0</span><span>2026 年 10 月 20 日</span><span>响应式 Web</span><span>两项核心能力</span><span>可供产品 / 设计 / 研发评审</span></div>
+</header>
+<div class="overview"><div class="stat"><strong>02</strong><span>核心能力 · 资产成本 / 比价</span></div><div class="stat"><strong>可解释</strong><span>公式、条件、来源可查看</span></div><div class="stat"><strong>可扩展</strong><span>平台配置与接入能力分离</span></div></div>
+
+<section id="overview">
+<h2><em>01</em>产品定位与目标</h2>
+<p class="lead">帮助有控制生活开支意愿的用户，看清“已经买的值不值”，找到“接下来买哪里便宜”。</p>
+<div class="grid2"><div class="box"><h3>能力 A · 账单 → 资产 → 日均成本</h3><p>导入支付或购物账单，自动识别可长期使用的商品，生成资产记录。用户可快速确认或修正，系统持续计算持有日均成本。</p></div><div class="box"><h3>能力 B · 商品名 → 跨平台 → 价格结论</h3><p>输入商品名称并确认规格，在启用且可接入的平台中查找报价，按统一条件比较到手价，给出最低价及其适用条件。</p></div></div>
+<h3>目标用户与核心任务</h3>
+<div class="table-wrap"><table><thead><tr><th>用户情境</th><th>要完成的任务</th><th>成功结果</th></tr></thead><tbody><tr><td>整理过去的消费</td><td>一次导入账单，减少逐件录入</td><td>可追溯的资产清单，自动计算日均成本</td></tr><tr><td>评估高价耐用品</td><td>查看手机、家电、衣物等使用成本</td><td>知道买入净成本、持有天数和每日分摊成本</td></tr><tr><td>有明确购买意图</td><td>跨平台确认同款实际价格</td><td>得到规格一致、条件清楚、来源可点击的推荐</td></tr></tbody></table></div>
+<div class="callout"><strong>首版假设：</strong>面向中国大陆个人用户，简体中文，人民币 CNY，自用实物资产；日期与账单时区统一为 Asia/Shanghai。这里的“资产管理”指生活物品管理，不涉及银行卡余额、投资组合或财务报表。</div>
+</section>
+
+<section id="scope">
+<h2><em>02</em>首版范围与优先级</h2>
+<div class="table-wrap"><table><thead><tr><th>模块</th><th>P0 · 首版必须</th><th>P1 · 后续增强</th></tr></thead><tbody>
+<tr><td>账单导入</td><td>CSV / XLSX、字段映射、导入预览、重复识别、退款关联、行级失败报告</td><td>更多固定模板、PDF / 图片 OCR、周期性导入</td></tr>
+<tr><td>资产管理</td><td>自动识别与入库、待确认列表、手动新增 / 编辑、资产状态、明细与汇总日均成本</td><td>保修提醒、估值、图表趋势、批量编辑</td></tr>
+<tr><td>商品比价</td><td>名称搜索、规格确认、全新 / 二手分组、到手价、最低价推荐、来源 / 时间 / 覆盖提示</td><td>历史价格、降价提醒、价格趋势、推荐替代品</td></tr>
+<tr><td>平台管理</td><td>后台表单维护平台、启停、排序、能力状态、接入配置、测试连接</td><td>平台自助接入、复杂促销规则引擎</td></tr>
+</tbody></table></div>
+<p><strong>首版不做：</strong>自动下单或支付、自动登录用户电商账号、投资理财、家庭共享、商品转卖、优惠群聚合、信用分期建议、全网价格保证。</p>
+<p><strong>建议上线门槛：</strong>至少 2 个独立平台的数据接入通过联调；否则作为单平台搜索内测，不展示“多平台最低价”承诺。拼多多、淘宝、京东、闲鱼、得物列入候选平台表，是否实际启用由接入验证决定。</p>
+</section>
+
+<section id="journeys">
+<h2><em>03</em>核心用户流程</h2>
+<h3>A. 从账单到资产成本</h3>
+<div class="flow"><div><b>01</b>上传账单</div><i>→</i><div><b>02</b>映射 / 校验 / 去重</div><i>→</i><div><b>03</b>识别交易与资产</div><i>→</i><div><b>04</b>自动入库 / 待确认</div><i>→</i><div><b>05</b>查看日均成本</div></div>
+<p>首次导入展示“可明确识别的资产将自动加入，模糊条目进入待确认”；默认执行该规则。结果页分别列出新增资产、待确认、普通消费、退款、重复与失败数量，支持按批次撤销。</p>
+<h3>B. 从商品名到购买决策</h3>
+<div class="flow"><div><b>01</b>输入商品名称</div><i>→</i><div><b>02</b>确认规格 / 成色</div><i>→</i><div><b>03</b>并发查询平台</div><i>→</i><div><b>04</b>归一化价格</div><i>→</i><div><b>05</b>推荐并查看原商品</div></div>
+<p>例如输入“iPhone 17”，先确认容量、版本与新旧要求；如果输入已包含完整规格，直接展示解析后的筛选条件并搜索。发生歧义时只追问影响同款判断和价格的关键字段。</p>
+</section>
+
+<section id="bills">
+<h2><em>04</em>账单导入需求</h2>
+<div class="table-wrap"><table><thead><tr><th>ID</th><th>需求</th><th>行为与约束</th></tr></thead><tbody>
+<tr><td>B-01 上传</td><td>CSV / XLSX 文件导入</td><td>单文件 ≤ 20 MB，≤ 50,000 行；CSV 支持 UTF-8 / GB18030，XLSX 可选工作表。未知模板进入映射向导；不执行宏和单元格公式，不打开文件内链接。</td></tr>
+<tr><td>B-02 字段映射</td><td>自动识别 + 人工修正</td><td>必填：交易时间、金额、交易描述或商品名；其余：交易号、订单号、平台、商户、收支方向、交易状态、数量、退款关联号。金额只接受可解析数字，币种首版仅 CNY。方向缺失需用户确认整批规则或逐行修正。</td></tr>
+<tr><td>B-03 导入预览</td><td>正式提交前展示识别结果</td><td>展示总行数、有效 / 重复 / 错误数量和前 20 条样例；日期格式歧义、负数含义、方向映射必须明确。错误行可跳过，有效行继续；无有效行时禁止提交。</td></tr>
+<tr><td>B-04 交易去重</td><td>重复导入不重复计入</td><td>优先用用户 + 来源 + 交易号判重；无交易号时，以时间、金额、方向、商户、描述指纹标记疑似重复，交用户判断。同笔微信 / 支付宝支付与电商订单跨源重复需关联候选，未确认前暂停相关资产自动入库。</td></tr>
+<tr><td>B-05 资产识别</td><td>区分资产、普通消费与非消费</td><td>明确的手机、家电、电脑、家具、可长期使用衣物等进入资产识别；餐饮、交通、房租等归普通消费；转账、充值、还款不生成资产。只有商户名、订单组合包无法拆分、型号不清或支付状态不明时进入待确认。</td></tr>
+<tr><td>B-06 自动入库</td><td>高置信度资产直接加入</td><td>仅成功支付、方向为支出、非重复、金额确定且商品明确的交易可自动建档。置信阈值和规则版本可配置；其余进入待确认。每条记录展示原始账单和识别理由，支持“改为普通消费”和“撤销入库”。</td></tr>
+<tr><td>B-07 数量 / 组合订单</td><td>避免一笔金额重复分摊</td><td>明确购买 n 件同款时，可建数量为 n 的资产组，净成本记录整组金额；日均成本也是整组成本。多种商品需分配金额，各分项金额之和必须等于可分配净支出；分配前不进入资产汇总。</td></tr>
+<tr><td>B-08 退款与取消</td><td>维护买入净成本</td><td>取消 / 失败订单不建资产；部分退款扣减资产净成本；全额退款且退货将资产设为已退货，移出在用汇总。平台价保类退款可保留在用状态。退款优先按原交易 / 订单号关联，歧义进入待确认；退款累计不得超过可退本金。</td></tr>
+<tr><td>B-09 结果与恢复</td><td>导入批次可追踪</td><td>显示进度、成功与失败数量，下载含行号 / 原值 / 错误原因的报告，支持修正后重试。批次撤销不影响其他有效来源；若资产后续被编辑或被其他批次引用，先展示影响，人工处理冲突后撤销。</td></tr>
+</tbody></table></div>
+<div class="callout warn"><strong>自动化限制：</strong>支付账单可能只有商户和金额，无法可靠判断具体商品。系统必须保留不确定状态，不得根据模糊商户名编造资产名称、型号、数量或价格分摊。</div>
+<h3>导入状态</h3>
+<p class="small"><code>待上传 → 待映射 → 校验中 → 待提交 → 处理中 → 成功 / 部分成功 / 失败</code>。同一批次提交需幂等；失败可重试，已成功的交易不重复创建。待确认项处理后独立更新，不改写原始导入报告。</p>
+</section>
+
+<section id="assets">
+<h2><em>05</em>资产管理与计算口径</h2>
+<p>首版主指标定义为<strong>持有日均成本</strong>，表示买入成本按持有时间摊薄的结果。它不代表实际使用频率，也不代表物品每天消耗的现金或市场折旧。</p>
+<h3>必需字段与操作</h3>
+<p>资产包含名称、分类、数量、买入总价、已关联退款、开始使用日、状态、来源与备注。开始使用日默认取购买日；若用户改为收货日或实际启用日，以修改后的日期计算。提供新增、编辑、归类、查看来源、标记售出 / 报废 / 退货、删除与恢复。</p>
+<div class="formula">买入净成本 = 买入总价 − 已确认退款（最低为 0）<br>持有天数 = max(1, 统计截止日期 − 开始使用日期 + 1)<br>在用资产日均成本 = 买入净成本 ÷ 持有天数<br>已结束资产截止日期 = 售出 / 报废 / 退货日期<br>在用资产汇总日均成本 = Σ 每件在用且信息完整资产的未舍入日均成本</div>
+<div class="table-wrap"><table><thead><tr><th>计算项</th><th>规则</th><th>示例 / 处理方式</th></tr></thead><tbody>
+<tr><td>日期边界</td><td>按 Asia/Shanghai 自然日，首日算 1 天；每天跨日更新</td><td>10 月 1 日开始使用，10 月 20 日为第 20 天。同日导入 / 使用也按 1 天计算。</td></tr>
+<tr><td>基础示例</td><td>净成本除以持有天数</td><td>耳机买入 ¥1,000，退款 ¥100，持有 30 天：¥900 ÷ 30 = ¥30.00 / 天。</td></tr>
+<tr><td>金额与精度</td><td>原金额以分存储，计算保留精度，展示四舍五入到两位小数</td><td>正值低于 ¥0.01 展示“&lt; ¥0.01 / 天”；汇总先加未舍入值再展示。</td></tr>
+<tr><td>缺失或未来日期</td><td>不猜测、不计入当前汇总</td><td>无日期为待完善；未来开始日期为未启用，到了开始日再纳入。</td></tr>
+<tr><td>售出 / 报废</td><td>冻结结束日的持有成本，从在用汇总移除</td><td>可选录入转卖收入；另展示“回收后日均成本 =（买入净成本 − 转卖净收入）÷ 持有天数”，允许负值，标签解释为净回收收益。</td></tr>
+<tr><td>退款回溯</td><td>以当前已确认退款重算当前值</td><td>首版不提供历史成本曲线；编辑日期 / 金额后立即重算，并记录修改日志。</td></tr>
+<tr><td>数量变化</td><td>资产组整体结束；部分售出需先拆分</td><td>拆分后各项成本合计保持原总成本，避免整组成本被重复计算。</td></tr>
+</tbody></table></div>
+<div class="callout"><strong>汇总展示：</strong>顶部展示在用买入净成本、在用资产数、在用资产汇总日均成本，并注明“各物品日均分摊成本之和，不是每日现金支出”。资产组按一条记录计数，另显示件数；待确认、未启用、已结束和信息不完整资产不计入。</div>
+<h3>状态与生命周期</h3>
+<p><code>待确认 → 未启用 / 在用 → 已售出 / 已报废 / 已退货</code>。待完善是数据质量标记，可与业务状态并存。结束日期不得早于开始日期或晚于今天；恢复在用需清除结束日期并重新计算。删除进入回收站，30 天后清除；被删除资产的来源交易保留“不再自动建档”标记，避免重导后意外恢复。</p>
+</section>
+
+<section id="comparison">
+<h2><em>06</em>多平台商品比价</h2>
+<h3>搜索输入与同款识别</h3>
+<p>接受自然语言商品名，如“戴森 V12 全新，官方保修”。Agent 解析品牌、型号、规格、容量、套装、数量、新旧状态、地区版和保修条件，展示为可编辑筛选项。全新为默认，二手需用户开启。必要时询问省 / 市以计算运费和地区补贴，不强制索取详细地址。</p>
+<p>同款候选按“精确匹配 / 待确认 / 不匹配”分类。精确匹配要求关键规格一致；配件、订金、租赁、空盒、不同容量和不同套装不得进入同款最低价。无法确认的候选单独展示并说明差异，不得参与推荐排序。</p>
+<h3>到手价定义</h3>
+<div class="formula">可比较到手价 = 商品实付价 + 必付运费 + 必付服务费 − 可核验优惠<br>单位价 = 可比较到手价 ÷ 相同计量单位数量（仅支持可明确换算的规格）</div>
+<ul><li>商品实付价已扣除的折扣不得再次减免；优惠按互斥、叠加与适用顺序计算，无法验证时不计算。</li><li>默认排序仅使用所有用户可直接获得、且当前可核验的条件。会员、新人、以旧换新、分期、地区补贴、凑单满减等单独标“条件价”，用户明确符合条件后才参与对应排序。</li><li>优惠卡展示领取方式、门槛、截止时间和可用依据。运费、强制费用或优惠资格未知时标为“价格待确认”，不与完整到手价混排。</li><li>二手商品独立分组，按型号、成色、保修、配件和卖家说明比较；成色不一致时明确提示差异，不输出跨成色的统一最低价。</li><li>多件商品同时展示总到手价与单位价，默认比较用户指定数量的总价；不得仅凭单位价推荐超出购买数量的套装。</li></ul>
+<div class="table-wrap"><table><thead><tr><th>ID</th><th>需求</th><th>结果要求</th></tr></thead><tbody>
+<tr><td>C-01 并发查询</td><td>对已启用且支持当前品类的平台发起查询</td><td>逐个平台展示等待 / 成功 / 无结果 / 超时 / 不支持；部分完成即可显示已有结果，单平台失败不阻塞整体。</td></tr>
+<tr><td>C-02 商品卡片</td><td>提供可判断是否同款的信息</td><td>商品标题、图片（有来源时）、关键规格、平台、店铺 / 卖家、全新 / 成色、保修、库存 / 地区限制、商品价、费用、优惠、到手价、采集时间和来源链接。</td></tr>
+<tr><td>C-03 推荐排序</td><td>符合筛选条件的完整到手价升序</td><td>显示“本次已查询平台内最低已确认到手价”。同价并列最低，以平台配置顺序稳定展示，不虚构服务质量排名。允许按平台 / 新旧 / 保修筛选。</td></tr>
+<tr><td>C-04 覆盖说明</td><td>说明结论的有效范围</td><td>展示本次查询平台总数、成功数、失败数和无结果数。只剩一个平台有报价时，提示“仅一个平台有有效报价，暂不能完成跨平台比较”。</td></tr>
+<tr><td>C-05 来源与新鲜度</td><td>报价必须可追溯</td><td>展示北京时间时间戳与直达链接；默认缓存有效期建议 15 分钟，过期标记且移出有效最低价。可重新查询；平台要求更短有效期时以更短值为准。</td></tr>
+<tr><td>C-06 用户行动</td><td>点击跳转查看原商品</td><td>跳转前展示“价格与库存以商品页及结算页为准”；不代购、不代付。已失效或明确下架链接停用并允许重新搜索。</td></tr>
+<tr><td>C-07 异常报价</td><td>处理缺价、极低价和不一致</td><td>无来源、库存未知、运费未知、标题与规格矛盾等转待确认；明显异常低价需二次验证规格、数量和费用。只有单条候选时不依赖统计异常判断，按完整性规则审核。</td></tr>
+</tbody></table></div>
+<h3>比价计算示例（虚构数据）</h3>
+<div class="table-wrap"><table><thead><tr><th>候选</th><th>费用结构</th><th>比较结果</th></tr></thead><tbody><tr><td>平台 A · 全新同规格</td><td>¥599 + 运费 ¥0 − 可核验通用券 ¥20</td><td><strong>¥579，默认最低已确认价</strong></td></tr><tr><td>平台 B · 全新同规格</td><td>¥569 + 运费 ¥15</td><td>¥584，参与默认排序</td></tr><tr><td>平台 C · 新人专享</td><td>¥549，免运；需从未下单</td><td>条件价 ¥549，资格未确认时不参与默认排序</td></tr><tr><td>平台 D · 二手九成新</td><td>¥399 + 运费 ¥10</td><td>¥409，单独二手分组</td></tr></tbody></table></div>
+</section>
+
+<section id="platforms">
+<h2><em>07</em>电商平台表单与接入管理</h2>
+<p>平台维护放在管理员后台；普通用户可以查看本次搜索的平台范围并选择查询平台。<strong>新增一行平台配置并不等于完成接入</strong>，可执行查询还需对应适配器、授权及联调验证。</p>
+<div class="table-wrap"><table><thead><tr><th>字段</th><th>要求</th><th>用途</th></tr></thead><tbody>
+<tr><td>平台 ID / 展示名称</td><td>必填、ID 唯一</td><td>例如 pdd / 拼多多；展示名可编辑，ID 创建后不可随意修改</td></tr>
+<tr><td>平台类型 / 支持品类</td><td>必填</td><td>全新 / 二手 / 综合；支持的商品类别及地区</td></tr>
+<tr><td>接入方式 / 适配器</td><td>启用前必填</td><td>官方或授权 API、用户授权连接等；填写已有适配器标识，不能任意执行脚本</td></tr>
+<tr><td>凭据引用 / 配额 / 超时</td><td>按接入方式填写</td><td>凭据存于服务端密钥系统，仅展示引用和掩码；限流与超时有默认值</td></tr>
+<tr><td>价格 / 库存能力</td><td>必填</td><td>是否返回运费、券条件、库存、成色、直达链接；能力不足时降级展示</td></tr>
+<tr><td>链接域名白名单</td><td>启用前必填</td><td>只允许跳转与请求已审核域名，禁止访问内网和任意地址</td></tr>
+<tr><td>状态 / 排序 / 缓存 TTL</td><td>必填</td><td>未配置、待验证、已启用、已停用、异常；控制搜索范围与展示次序</td></tr>
+<tr><td>最近测试时间 / 结果</td><td>系统生成</td><td>检查授权、响应字段、限流及示例报价；失败不得启用</td></tr>
+</tbody></table></div>
+<h3>候选平台初始化</h3>
+<div class="table-wrap"><table><thead><tr><th>平台</th><th>计划比较范围</th><th>初始状态</th><th>启用前验证</th></tr></thead><tbody>
+<tr><td>拼多多</td><td>全新商品及可核验优惠</td><td><span class="tag wait">待接入验证</span></td><td>数据授权、规格、优惠、运费与库存</td></tr><tr><td>淘宝</td><td>全新商品；店铺信息可区分</td><td><span class="tag wait">待接入验证</span></td><td>数据授权、店铺、SKU、价格完整性</td></tr><tr><td>京东</td><td>全新商品；店铺信息可区分</td><td><span class="tag wait">待接入验证</span></td><td>数据授权、地区价格、运费与库存</td></tr><tr><td>闲鱼</td><td>二手商品，按成色与配件分组</td><td><span class="tag wait">待接入验证</span></td><td>数据授权、可售性、成色、卖家与运费</td></tr><tr><td>得物</td><td>按可获取的具体规格与费用比较</td><td><span class="tag wait">待接入验证</span></td><td>数据授权、SKU、必要服务费与购买条件</td></tr>
+</tbody></table></div>
+<p class="caption">以上是需求候选清单，不表示已确认这些平台具备可用接口或已取得授权。具体能力、费用和使用条件由接入调研确定。</p>
+<div class="callout warn">没有可用接入时显示“该平台暂未接入”；可以提供站内搜索跳转，但跳转入口不作为有效报价，不参与最低价计算。首版不依赖绕过验证码、登录限制或访问控制获取数据。</div>
+</section>
+
+<section id="screens">
+<h2><em>08</em>信息架构与关键页面</h2>
+<p>主导航：<strong>资产总览 / 导入账单 / 商品比价</strong>；次级入口：待确认、资产详情、导入历史、设置。管理员另有电商平台管理入口。下方为 PRD 交互示意，数据均为虚构，不是已实现的产品功能。</p>
+<h3>页面 A · 资产总览</h3>
+<div class="mock" role="img" aria-label="资产总览界面示意：净成本 990 元，2 件资产，汇总日均成本 33 元，待确认 3 项">
+<div class="mock-top"><div class="mock-title">我的生活资产</div><span class="mock-action">＋ 导入账单</span></div>
+<div class="cards"><div class="card"><small>在用买入净成本</small><b>¥990.00</b></div><div class="card"><small>在用资产</small><b>2 项 / 2 件</b></div><div class="card"><small>汇总日均成本</small><b>¥33.00 <small>/ 天</small></b></div></div>
+<p class="caption">各资产日均成本之和，不代表每天实际支出 · 待确认 3 项 →</p>
+<div class="mock-row"><div><strong>无线耳机</strong> <span class="tag">在用</span><br><span class="caption">净成本 ¥900 · 已持有 30 天 · 来源：导入账单</span></div><div class="mock-price">¥30.00<span class="caption"> / 天</span></div></div>
+<div class="mock-row"><div><strong>电热水壶</strong> <span class="tag">在用</span><br><span class="caption">净成本 ¥90 · 已持有 30 天 · 来源：手动添加</span></div><div class="mock-price">¥3.00<span class="caption"> / 天</span></div></div>
+</div>
+<p class="small"><strong>交互：</strong>默认按日均成本降序，可切换按购买日 / 净成本排序；支持搜索、分类、状态筛选。首次为空时显示导入和手动新增；加载失败保留已有数据并提供重试。详情页展开公式和来源，编辑后即时更新汇总。</p>
+<h3>页面 B · 商品比价</h3>
+<div class="mock" role="img" aria-label="比价界面示意：耳机 X，全新，平台 A 的已确认到手价为 579 元">
+<div class="mock-top"><div class="mock-title">买之前，先比一比</div><span class="tag">示例数据</span></div>
+<div class="search-demo">耳机 X · 标准套装 · 全新 · 1 件 <span style="float:right;color:var(--green)">搜索 →</span></div>
+<p class="caption">已查询 4 个平台 · 3 个成功 · 1 个超时 · 1 条条件价单独展示</p>
+<div class="mock-row"><div><span class="tag">本次最低已确认价</span><br><strong>平台 A · 店铺甲</strong><br><span class="caption">¥599 − 通用券 ¥20 + 运费 ¥0<br>采集：2026-10-20 14:30（北京时间）· 全新 / 标准套装</span></div><div><div class="mock-price">¥579</div><span class="mock-action">查看商品 ↗</span></div></div>
+<div class="mock-row"><div><strong>平台 B · 店铺乙</strong><br><span class="caption">商品 ¥569 + 运费 ¥15 · 同规格</span></div><div class="mock-price">¥584</div></div>
+<div class="mock-row"><div><strong>平台 C · 店铺丙</strong> <span class="tag wait">新人条件价</span><br><span class="caption">需确认新人资格，暂不参与默认最低价</span></div><div class="mock-price">¥549</div></div>
+<p class="caption">结论仅覆盖本次成功查询且满足筛选条件的报价；实际价格以结算页为准。</p>
+</div>
+<p class="small"><strong>空 / 错误状态：</strong>名称太泛时要求补全；没有同款时展示“无符合条件报价”并允许改规格；部分超时展示已有结果和缺失平台；全部失败提供重试；过期显示刷新入口；同价展示并列最低。</p>
+<h3>其余页面清单</h3>
+<div class="table-wrap"><table><thead><tr><th>页面</th><th>核心内容</th><th>关键操作</th></tr></thead><tbody><tr><td>账单导入向导</td><td>文件、映射、预览、处理进度、批次结果</td><td>修正映射、确认导入、下载错误报告、撤销批次</td></tr><tr><td>待确认工作台</td><td>原始交易、识别建议、冲突原因、置信信息</td><td>加入资产、改为普通消费、关联退款、保留 / 合并重复项</td></tr><tr><td>资产详情</td><td>字段、成本公式、来源交易、修改历史</td><td>编辑、拆分、结束持有、删除 / 恢复</td></tr><tr><td>平台管理</td><td>平台列表、配置表单、接入状态、健康度</td><td>新增、修改、测试、启停；停用不删除历史报价来源</td></tr></tbody></table></div>
+</section>
+
+<section id="agent">
+<h2><em>09</em>Agent 分工与行为边界</h2>
+<div class="table-wrap"><table><thead><tr><th>任务</th><th>Agent 负责</th><th>确定性服务负责</th></tr></thead><tbody><tr><td>账单理解</td><td>描述归类、提取商品线索、生成待确认原因</td><td>解析、金额校验、幂等、去重、退款记账、数据库写入</td></tr><tr><td>资产成本</td><td>用自然语言解释公式和变化</td><td>所有金额 / 日期计算、状态转换、汇总与审计</td></tr><tr><td>商品比价</td><td>理解意图、补全关键规格、辅助候选匹配</td><td>平台调用、字段验证、费用计算、有效性检查、排序</td></tr></tbody></table></div>
+<ul><li>模型输出必须符合结构化字段约束；无法确定时返回空值、原因和待确认标记，不补造缺失事实。</li><li>每条资产有原始交易证据；每条报价有真实来源链接和时间。失败时如实标记，不用语言模型生成平台价格填空。</li><li>账单文本和平台商品描述属于外部数据；其中的指令不能改变系统规则、读取用户其他数据或触发任意工具。</li><li>导入预览提交后，可在声明的规则内自动入库；金额冲突、跨源重复、模糊商品和退款歧义需人工处理。删除数据或撤销有冲突批次须展示影响。</li><li>价格推荐只依据用户条件与可核验到手价；如未来有推广关系需显著披露，不能覆盖默认价格排序。</li></ul>
+</section>
+
+<section id="data">
+<h2><em>10</em>核心数据模型与关系</h2>
+<div class="table-wrap"><table><thead><tr><th>实体</th><th>关键字段</th><th>关系与约束</th></tr></thead><tbody>
+<tr><td>ImportBatch</td><td>id、user_id、source、file_hash、mapping_version、status、counts、created_at</td><td>一个批次关联多笔交易；原文件独立存储，状态变更可审计</td></tr>
+<tr><td>Transaction</td><td>id、batch_id、external_id、order_id、occurred_at、amount_fen、currency、direction、status、raw_description、fingerprint</td><td>保存来源字段；标准化结果与原始值分离；重复来源可关联到同一逻辑交易</td></tr>
+<tr><td>Asset</td><td>id、user_id、name、category、quantity、purchase_amount_fen、start_date、end_date、status、review_status、deleted_at</td><td>日均成本为计算值；手动资产允许无来源；数量及成本变更需守恒</td></tr>
+<tr><td>AssetTransaction</td><td>asset_id、transaction_id、allocated_amount_fen、role</td><td>支持一笔订单拆多个资产，也支持支付 / 退款归属同一资产；role 为买入 / 退款等</td></tr>
+<tr><td>RefundAllocation</td><td>refund_transaction_id、original_transaction_id、asset_id、amount_fen、reason、confirmed_at</td><td>退款不可重复分配；退款累计校验通过后影响净成本</td></tr>
+<tr><td>Platform</td><td>id、name、type、adapter_id、credential_ref、domains、capabilities、status、sort_order、ttl、last_test</td><td>管理员维护；不存储明文密钥；报价来源引用平台 ID</td></tr>
+<tr><td>SearchSession</td><td>id、user_id、query、normalized_specs、region、condition、requested_quantity、platform_statuses、created_at</td><td>保留搜索范围和过滤条件，便于解释最低价范围</td></tr>
+<tr><td>Offer</td><td>session_id、platform_id、title、sku、condition、seller、url、base_price_fen、shipping_fen、fees_fen、discounts、eligibility、stock、fetched_at、expires_at、match_status</td><td>金额 / 库存未知用 null，不能用 0 替代；归一化价格包含计算明细和验证状态</td></tr>
+<tr><td>AuditLog</td><td>actor、entity、action、before_after、reason、timestamp</td><td>记录人工修正、自动入库、退款关联、平台配置和删除操作；不记录密钥</td></tr>
+</tbody></table></div>
+<p class="small"><strong>逻辑服务：</strong>导入解析 → 交易标准化 → 资产识别 / 待确认 → 成本引擎；搜索解析 → 平台适配器 → 商品匹配 → 费用归一化 → 结果排序。用户数据全程按 user_id 隔离；管理员的平台配置权限与个人账单访问权限分离。</p>
+</section>
+
+<section id="quality">
+<h2><em>11</em>非功能需求与数据保护</h2>
+<div class="table-wrap"><table><thead><tr><th>维度</th><th>首版要求 / 建议目标</th></tr></thead><tbody>
+<tr><td>性能</td><td>建议验收环境：1,000 条在用资产的总览 P95 ≤ 2 秒；1 万行标准模板账单在 60 秒内完成基础校验并返回可见进度，模型识别异步继续；报价查询首批结果目标 ≤ 5 秒，单平台默认超时 12 秒，整体 20 秒内收敛为完整或部分结果。</td></tr>
+<tr><td>可靠性</td><td>文件导入和资产写入具备幂等约束；退款及分配使用事务保护。平台调用设配额、有限重试和熔断，不能因自动重试无限消耗额度。后台作业恢复时沿用原批次。</td></tr>
+<tr><td>账号与隔离</td><td>首版需可识别个人用户身份；登录具体方式待选。服务端校验所有资源归属，禁止通过修改 ID 查看他人文件、资产和搜索。平台管理只允许管理员角色。</td></tr>
+<tr><td>隐私</td><td>上传前说明用途和保存期限。账号、手机号等非必要字段脱敏；原始文件默认处理完成后 7 天删除，用户可立即删除；结构化数据保留到用户删除。发给模型的内容仅含识别必需字段，禁止发送支付凭据和完整账户信息。</td></tr>
+<tr><td>删除与导出</td><td>支持导出资产 / 标准化交易为 CSV，导出时防公式注入；个人数据删除需确认并在 24 小时内从在线系统清除，备份在建议 30 天轮换期到期清除。保留策略上线前落实到作业与配置。</td></tr>
+<tr><td>文件与链接</td><td>校验扩展名和真实类型，防压缩炸弹、超量行与异常内容。导入值与商品文本做转义；链接只接受审核协议 / 域名，平台适配器禁止任意 URL 和内网请求。</td></tr>
+<tr><td>可观测性</td><td>记录批次 / 查询关联 ID、平台耗时、错误码与价格字段缺失率；日志不含完整账单、密钥或身份信息。业务告警区分平台失败、识别失败与本服务故障。</td></tr>
+<tr><td>可访问性</td><td>手机与桌面适配；关键状态同时有文本，不只靠颜色；表单有标签、错误定位和键盘焦点；金额与时间格式统一。</td></tr>
+</tbody></table></div>
+<p class="caption">性能及保存期限为本 PRD 建议值，需在技术评审中确认资源预算、数据处理方式及最终实现；并非现有系统能力声明。</p>
+</section>
+
+<section id="acceptance">
+<h2><em>12</em>核心验收用例</h2>
+<div class="table-wrap"><table><thead><tr><th>编号</th><th>给定 / 操作</th><th>预期结果</th></tr></thead><tbody>
+<tr><td>AT-01</td><td>导入含 8 条有效、1 条必填错误、1 条明确重复的 10 行账单</td><td>预览准确显示 8 / 1 / 1；确认后仅 8 条进入后续处理；错误报告带原行号和原因。</td></tr>
+<tr><td>AT-02</td><td>同一来源、同一交易号重复导入；另有同一订单跨支付 / 电商账单导入</td><td>前者不创建重复交易 / 资产；后者进入跨源关联确认，未确认不重复建档；确认合并后仅一份成本。</td></tr>
+<tr><td>AT-03</td><td>明确手机订单、只有商户名称的支出、餐饮、转账四类交易</td><td>手机满足规则时自动建档；模糊支出待确认；餐饮为普通消费；转账不生成资产；全部保留来源证据。</td></tr>
+<tr><td>AT-04</td><td>耳机买入 ¥1,000，部分退款 ¥100，已持有 30 天</td><td>净成本 ¥900，日均 ¥30.00；再导入相同退款不重复抵扣；超额退款进入异常处理。</td></tr>
+<tr><td>AT-05</td><td>10 月 1 日开始使用，10 月 20 日查看；或当天开始使用</td><td>前者 20 天，后者 1 天；未来日期和缺失日期不计入在用汇总；每日跨日后自动更新。</td></tr>
+<tr><td>AT-06</td><td>两项在用资产：¥900 / 30 天、¥90 / 30 天；将第一项标记售出</td><td>初始汇总 ¥33.00 / 天、净成本 ¥990；售出后在用汇总 ¥3.00 / 天、净成本 ¥90；售出资产冻结并保留历史。</td></tr>
+<tr><td>AT-07</td><td>一笔 ¥1,200 订单包含两件不同商品</td><td>未拆分时待确认；分为 ¥800 和 ¥400 后各建一项，合计 ¥1,200；分配 ¥800 + ¥500 被阻止。</td></tr>
+<tr><td>AT-08</td><td>同规格报价分别为 599−20+0、569+15；新人价 549；二手 399+10</td><td>默认全新最低为 ¥579，第二名 ¥584；新人价单独标记；二手不混排。明确选择且符合新人资格后可在对应条件下推荐 ¥549。</td></tr>
+<tr><td>AT-09</td><td>搜索出现不同容量、配件、订金、运费未知、过期报价</td><td>不进入默认最低价；分别说明规格不符、非完整商品、费用待确认或已过期，允许刷新或改筛选。</td></tr>
+<tr><td>AT-10</td><td>4 个平台中 1 个超时、1 个无结果、2 个成功；之后全部失败</td><td>前者保留有效比较并披露覆盖；后者不输出价格结论，给出失败状态与重试；仅一平台有效时提示无法跨平台比较。</td></tr>
+<tr><td>AT-11</td><td>管理员新增候选平台配置并尝试启用</td><td>未完成适配器 / 授权 / 必填配置或测试失败时不可启用；成功后进入搜索范围；停用后新查询不再调用。</td></tr>
+<tr><td>AT-12</td><td>账单文字含“忽略指令”；用户尝试访问他人资产；撤销有后续编辑的导入批次</td><td>账单文本只作数据；跨用户访问被拒绝；批次撤销先展示冲突，不能静默覆盖后续编辑。</td></tr>
+</tbody></table></div>
+<div class="callout"><span class="check">上线检查：</span>全部 P0 用例通过；资产金额与日期边界可由固定样例复算；至少两平台真实接入验证通过；推荐价格均能追溯到有效来源；权限隔离与删除机制完成验证。</div>
+</section>
+
+<section id="metrics">
+<h2><em>13</em>产品指标与埋点</h2>
+<p>首版先验证“导入减少录入负担”和“比价结论可用”。不把搜索次数或最低标价当作真实省钱金额。</p>
+<div class="table-wrap"><table><thead><tr><th>指标</th><th>口径</th><th>建议初始目标</th></tr></thead><tbody>
+<tr><td>导入完成率</td><td>成功或部分成功的已提交批次 / 全部已提交批次</td><td>支持格式 ≥ 95%；取消和不支持文件单列</td></tr>
+<tr><td>自动入库准确率</td><td>人工标注为正确的自动入库资产 / 抽检自动入库资产</td><td>≥ 98%；上线前按来源 / 品类构建标注集，覆盖难例</td></tr>
+<tr><td>自动覆盖率</td><td>自动正确入库资产 / 标注集所有可识别资产</td><td>先建立基线；与准确率同时看，避免全部待确认</td></tr>
+<tr><td>有效比价覆盖率</td><td>至少两个平台有同款有效报价的已完成查询 / 所有已完成支持范围查询</td><td>内测建立基线；平台或品类不支持的请求另列</td></tr>
+<tr><td>推荐价一致率</td><td>同时间、地区、SKU、资格下，结算可复现到手价的抽检推荐 / 全部抽检推荐</td><td>≥ 95%，保留误差原因和采集时间差</td></tr>
+<tr><td>结果行动率</td><td>点击有效来源商品的查询会话 / 有有效报价会话</td><td>观察指标，不等于成交或实际节省</td></tr>
+<tr><td>可见价差</td><td>同一会话相同条件下的最高已确认到手价 − 最低已确认到手价</td><td>标为“本次报价差”，不累计为“已省金额”</td></tr>
+</tbody></table></div>
+<p class="small"><strong>建议事件：</strong><code>bill_upload</code>、<code>import_submit</code>、<code>import_complete</code>、<code>asset_auto_created</code>、<code>asset_corrected</code>、<code>review_resolved</code>、<code>comparison_started</code>、<code>platform_query_finished</code>、<code>comparison_completed</code>、<code>offer_clicked</code>。仅上传必要的匿名 ID、状态、数量与耗时，不采集原始账单、完整查询文本和商品页中的个人信息。</p>
+</section>
+
+<section id="delivery">
+<h2><em>14</em>实施顺序、依赖与待定项</h2>
+<div class="table-wrap"><table><thead><tr><th>阶段</th><th>交付内容</th><th>完成判定</th></tr></thead><tbody>
+<tr><td>M0 · 可行性验证</td><td>收集脱敏账单样例、确认首批字段模板；验证至少两个平台的授权与可用字段</td><td>形成实际支持矩阵与接入成本；不把模拟报价作为接入成功</td></tr>
+<tr><td>M1 · 资产闭环</td><td>导入、校验、识别、待确认、资产建档、退款、成本与批次追踪</td><td>AT-01 至 AT-07 及相关安全用例通过</td></tr>
+<tr><td>M2 · 比价闭环</td><td>平台管理、适配器、搜索解析、同款匹配、费用计算与来源跳转</td><td>AT-08 至 AT-11 通过；至少两平台真实数据可复现</td></tr>
+<tr><td>M3 · 小范围内测</td><td>异常恢复、权限与删除、可观测性、指标基线、价格抽检</td><td>全部 P0 验收通过；明确可查询平台、品类与限制后开放使用</td></tr>
+</tbody></table></div>
+<h3>需要后续评审确认的事项</h3>
+<div class="table-wrap"><table><thead><tr><th>事项</th><th>本稿默认方案</th><th>影响 / 责任角色</th></tr></thead><tbody>
+<tr><td>账单来源</td><td>CSV / XLSX 通用映射，先按实际样例增加固定模板</td><td>用户提供脱敏样例后确定覆盖；产品 / 研发</td></tr>
+<tr><td>自动入库阈值</td><td>高置信度自动加入，其余待确认；金额冲突硬拦截</td><td>根据标注集校准；产品 / 算法</td></tr>
+<tr><td>首批电商平台</td><td>候选池 5 个，优先选择授权与数据完整度满足要求的 2 个</td><td>决定首版比价覆盖与上线周期；接入研发 / 产品</td></tr>
+<tr><td>账户与部署</td><td>单人账户隔离、响应式 Web、管理员后台</td><td>选择认证方式与存储环境；研发</td></tr>
+<tr><td>资源预算</td><td>平台调用限额、模型识别异步、报价短时缓存</td><td>确认日调用量、模型费用和服务预算；产品 / 研发</td></tr>
+<tr><td>物品范围</td><td>耐用品和可长期使用衣物；耗材、服务、订阅不自动转资产</td><td>分类白名单可配置；产品</td></tr>
+</tbody></table></div>
+<div class="callout"><strong>首版完成定义：</strong>用户能够导入一份真实账单，获得可修正且成本准确的资产清单；输入一个支持范围内的商品，获得至少两个平台的同规格报价和可追溯的最低已确认到手价。其他平台和增强功能后续逐步扩展。</div>
+</section>
+<div class="footer"><span>生活省钱 Agent · PRD v1.0 · 需求评审稿</span><span>2026.10.20 / Asia · Shanghai</span></div>
+</main>
+</div>
+</body>
+</html>
