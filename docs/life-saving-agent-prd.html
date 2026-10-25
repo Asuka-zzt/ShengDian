@@ -17,24 +17,25 @@
 <div class="brand"><span>省</span>省点 · 生活省钱 Agent</div>
 <div class="aside-label">PRODUCT REQUIREMENTS</div>
 <nav aria-label="文档目录">
-<a href="#overview">01 · 产品定位</a><a href="#scope">02 · 首版范围</a><a href="#journeys">03 · 用户流程</a><a href="#bills">04 · 账单导入</a><a href="#assets">05 · 资产与日均成本</a><a href="#comparison">06 · 多平台比价</a><a href="#platforms">07 · 电商平台管理</a><a href="#screens">08 · 页面与交互示意</a><a href="#agent">09 · Agent 行为边界</a><a href="#data">10 · 数据模型</a><a href="#quality">11 · 非功能需求</a><a href="#acceptance">12 · 验收标准</a><a href="#metrics">13 · 指标与埋点</a><a href="#delivery">14 · 实施与待定项</a>
+<a href="#overview">01 · 产品定位</a><a href="#scope">02 · 首版范围</a><a href="#journeys">03 · 用户流程</a><a href="#bills">04 · 账单导入</a><a href="#assets">05 · 资产与日均成本</a><a href="#comparison">06 · 商品与生活服务比价</a><a href="#platforms">07 · 比价平台管理</a><a href="#screens">08 · 页面与交互示意</a><a href="#agent">09 · Agent 行为边界</a><a href="#data">10 · 数据模型</a><a href="#quality">11 · 非功能需求</a><a href="#acceptance">12 · 验收标准</a><a href="#metrics">13 · 指标与埋点</a><a href="#delivery">14 · 实施与待定项</a>
 </nav>
 <button class="print" onclick="window.print()">打印 / 保存为 PDF</button>
-<p class="caption">PRD v1.0 · 2026.10.20<br>状态：需求评审稿<br>优先级：P0 必须 / P1 增强</p>
+<p class="caption">PRD v1.1 · 2026.10.25<br>状态：需求评审稿<br>优先级：P0 必须 / P1 增强</p>
 </aside>
 <main>
 <header>
 <div class="eyebrow">LIFE SAVING AGENT / MVP PRD</div>
 <h1>买之前比价，<br>买之后算清每天花多少。</h1>
-<p>围绕账单、实物资产和商品比价，建立一条可追溯的生活省钱决策链。首版只解决两个问题：已有物品的使用成本，以及准备购买商品的最低可购价格。</p>
-<div class="meta"><span>版本 1.0</span><span>2026 年 10 月 20 日</span><span>响应式 Web</span><span>两项核心能力</span><span>可供产品 / 设计 / 研发评审</span></div>
+<p>围绕账单、实物资产和商品比价，建立一条可追溯的生活省钱决策链。首版只解决两个问题：已有物品的使用成本，以及商品与生活服务在优惠规则下的最低可购价格。</p>
+<div class="meta"><span>版本 1.1</span><span>2026 年 10 月 25 日</span><span>响应式 Web</span><span>两项核心能力</span><span>可供产品 / 设计 / 研发评审</span></div>
 </header>
 <div class="overview"><div class="stat"><strong>02</strong><span>核心能力 · 资产成本 / 比价</span></div><div class="stat"><strong>可解释</strong><span>公式、条件、来源可查看</span></div><div class="stat"><strong>可扩展</strong><span>平台配置与接入能力分离</span></div></div>
 
+<div class="callout"><strong>v1.1 · 2026-10-25 更新：</strong>把平台优惠规则作为比价核心能力；平台范围扩展至美团等生活服务 App，新增外卖、即时零售和到店团购的比较口径。本次更新需求文档，现有交互原型仍使用电商模拟报价，新增能力尚未实现。</div>
 <section id="overview">
 <h2><em>01</em>产品定位与目标</h2>
 <p class="lead">帮助有控制生活开支意愿的用户，看清“已经买的值不值”，找到“接下来买哪里便宜”。</p>
-<div class="grid2"><div class="box"><h3>能力 A · 账单 → 资产 → 日均成本</h3><p>导入支付或购物账单，自动识别可长期使用的商品，生成资产记录。用户可快速确认或修正，系统持续计算持有日均成本。</p></div><div class="box"><h3>能力 B · 商品名 → 跨平台 → 价格结论</h3><p>输入商品名称并确认规格，在启用且可接入的平台中查找报价，按统一条件比较到手价，给出最低价及其适用条件。</p></div></div>
+<div class="grid2"><div class="box"><h3>能力 A · 账单 → 资产 → 日均成本</h3><p>导入支付或购物账单，自动识别可长期使用的商品，生成资产记录。用户可快速确认或修正，系统持续计算持有日均成本。</p></div><div class="box"><h3>能力 B · 商品名 → 跨平台 → 价格结论</h3><p>输入商品或生活服务名称并确认规格、地区与履约方式，在电商及美团等生活服务平台中查找报价，按各平台优惠规则计算可核验到手价，给出最低价、适用条件及操作步骤。</p></div></div>
 <h3>目标用户与核心任务</h3>
 <div class="table-wrap"><table><thead><tr><th>用户情境</th><th>要完成的任务</th><th>成功结果</th></tr></thead><tbody><tr><td>整理过去的消费</td><td>一次导入账单，减少逐件录入</td><td>可追溯的资产清单，自动计算日均成本</td></tr><tr><td>评估高价耐用品</td><td>查看手机、家电、衣物等使用成本</td><td>知道买入净成本、持有天数和每日分摊成本</td></tr><tr><td>有明确购买意图</td><td>跨平台确认同款实际价格</td><td>得到规格一致、条件清楚、来源可点击的推荐</td></tr></tbody></table></div>
 <div class="callout"><strong>首版假设：</strong>面向中国大陆个人用户，简体中文，人民币 CNY，自用实物资产；日期与账单时区统一为 Asia/Shanghai。这里的“资产管理”指生活物品管理，不涉及银行卡余额、投资组合或财务报表。</div>
@@ -45,11 +46,12 @@
 <div class="table-wrap"><table><thead><tr><th>模块</th><th>P0 · 首版必须</th><th>P1 · 后续增强</th></tr></thead><tbody>
 <tr><td>账单导入</td><td>CSV / XLSX、字段映射、导入预览、重复识别、退款关联、行级失败报告</td><td>更多固定模板、PDF / 图片 OCR、周期性导入</td></tr>
 <tr><td>资产管理</td><td>自动识别与入库、待确认列表、手动新增 / 编辑、资产状态、明细与汇总日均成本</td><td>保修提醒、估值、图表趋势、批量编辑</td></tr>
-<tr><td>商品比价</td><td>名称搜索、规格确认、全新 / 二手分组、到手价、最低价推荐、来源 / 时间 / 覆盖提示</td><td>历史价格、降价提醒、价格趋势、推荐替代品</td></tr>
-<tr><td>平台管理</td><td>后台表单维护平台、启停、排序、能力状态、接入配置、测试连接</td><td>平台自助接入、复杂促销规则引擎</td></tr>
+<tr><td>商品比价</td><td>名称搜索、规格确认、全新 / 二手 / 履约方式分组、商品与生活服务报价、按规则计算到手价、来源 / 时间 / 覆盖提示</td><td>历史价格、降价提醒、价格趋势、推荐替代品</td></tr>
+<tr><td>优惠计算</td><td>平台券 / 店铺券 / 满减 / 配送优惠的规则化表达、门槛基数、叠加与互斥、资格 / 有效期校验、优惠方案明细</td><td>多商家跨单凑单、积分估值、动态定价预测、超出已支持规则模板的复杂活动</td></tr>
+<tr><td>平台管理</td><td>后台表单维护电商与生活服务平台、业务场景、地区、优惠能力、规则版本、启停、接入配置、测试连接</td><td>平台自助接入、更多服务品类与规则模板</td></tr>
 </tbody></table></div>
 <p><strong>首版不做：</strong>自动下单或支付、自动登录用户电商账号、投资理财、家庭共享、商品转卖、优惠群聚合、信用分期建议、全网价格保证。</p>
-<p><strong>建议上线门槛：</strong>至少 2 个独立平台的数据接入通过联调；否则作为单平台搜索内测，不展示“多平台最低价”承诺。拼多多、淘宝、京东、闲鱼、得物列入候选平台表，是否实际启用由接入验证决定。</p>
+<p><strong>建议上线门槛：</strong>每个公开支持的场景至少有 2 个独立平台的可比报价通过联调；电商和生活服务分别验收，不能用两个电商接入代表生活服务已支持。否则该场景只作单平台搜索内测，不展示跨平台最低价承诺。候选范围包括拼多多、淘宝、京东、闲鱼、得物，以及美团、大众点评等生活服务 App；是否启用由真实接入验证决定。</p>
 </section>
 
 <section id="journeys">
@@ -58,8 +60,8 @@
 <div class="flow"><div><b>01</b>上传账单</div><i>→</i><div><b>02</b>映射 / 校验 / 去重</div><i>→</i><div><b>03</b>识别交易与资产</div><i>→</i><div><b>04</b>自动入库 / 待确认</div><i>→</i><div><b>05</b>查看日均成本</div></div>
 <p>首次导入展示“可明确识别的资产将自动加入，模糊条目进入待确认”；默认执行该规则。结果页分别列出新增资产、待确认、普通消费、退款、重复与失败数量，支持按批次撤销。</p>
 <h3>B. 从商品名到购买决策</h3>
-<div class="flow"><div><b>01</b>输入商品名称</div><i>→</i><div><b>02</b>确认规格 / 成色</div><i>→</i><div><b>03</b>并发查询平台</div><i>→</i><div><b>04</b>归一化价格</div><i>→</i><div><b>05</b>推荐并查看原商品</div></div>
-<p>例如输入“iPhone 17”，先确认容量、版本与新旧要求；如果输入已包含完整规格，直接展示解析后的筛选条件并搜索。发生歧义时只追问影响同款判断和价格的关键字段。</p>
+<div class="flow"><div><b>01</b>输入商品 / 服务</div><i>→</i><div><b>02</b>确认规格 / 场景</div><i>→</i><div><b>03</b>并发查询平台</div><i>→</i><div><b>04</b>匹配并计算优惠</div><i>→</i><div><b>05</b>推荐并查看原商品</div></div>
+<p>例如输入“iPhone 17”，先确认容量、版本与新旧要求；如果输入已包含完整规格，直接展示解析后的筛选条件并搜索。生活服务先确认城市 / 门店、配送或到店、人数 / 数量、预期使用日期与时段；按场景只追问影响可比性与价格的关键字段。城市或商圈可手动输入，定位不是强制条件；精确地址仅在确认配送可达性确有需要时由用户提供。</p>
 </section>
 
 <section id="bills">
@@ -101,13 +103,20 @@
 </section>
 
 <section id="comparison">
-<h2><em>06</em>多平台商品比价</h2>
+<h2><em>06</em>商品与生活服务比价</h2>
 <h3>搜索输入与同款识别</h3>
 <p>接受自然语言商品名，如“戴森 V12 全新，官方保修”。Agent 解析品牌、型号、规格、容量、套装、数量、新旧状态、地区版和保修条件，展示为可编辑筛选项。全新为默认，二手需用户开启。必要时询问省 / 市以计算运费和地区补贴，不强制索取详细地址。</p>
 <p>同款候选按“精确匹配 / 待确认 / 不匹配”分类。精确匹配要求关键规格一致；配件、订金、租赁、空盒、不同容量和不同套装不得进入同款最低价。无法确认的候选单独展示并说明差异，不得参与推荐排序。</p>
+<h3>比较场景与服务等价条件</h3>
+<div class="table-wrap"><table><thead><tr><th>场景</th><th>可参与同组最低价的条件</th><th>必须单独展示的差异</th></tr></thead><tbody>
+<tr><td>电商 / 即时零售实物</td><td>同品牌、型号、规格、数量、新旧及保修条件；用户接受的配送范围与时效</td><td>快递与即时配送默认分组；只有用户明确接受不同配送方式且均满足其时效要求时才合并比较，并展示差异</td></tr>
+<tr><td>外卖 / 自提</td><td>同一实际门店、菜品 / 规格 / 配料、份数及配送地址或自提门店；满足预计送达 / 取餐时间</td><td>外卖与自提默认分组；同名连锁不同分店不能自动视为同门店；起送价和必选配料计入校验</td></tr>
+<tr><td>到店团购 / 服务套餐</td><td>同一实际门店、服务项目 / 套餐内容、适用人数 / 次数、预约日期时段、节假日限制与必付费用</td><td>退款规则、预约限制、有效期、不包含项目均需展示；内容或关键使用条件不同的套餐单列为替代方案</td></tr>
+</tbody></table></div>
+<p>美团、大众点评等平台作为候选来源，并不预设每个 App 都提供以上全部场景。同一底层报价在多个入口出现时，以实际门店 / 商品标识与报价来源去重，并披露来源关联；仅同一数据源的镜像不能作为两份独立报价满足上线门槛。餐饮、服务和团购券属于消费，不因进入比价结果自动加入实物资产。</p>
 <h3>到手价定义</h3>
-<div class="formula">可比较到手价 = 商品实付价 + 必付运费 + 必付服务费 − 可核验优惠<br>单位价 = 可比较到手价 ÷ 相同计量单位数量（仅支持可明确换算的规格）</div>
-<ul><li>商品实付价已扣除的折扣不得再次减免；优惠按互斥、叠加与适用顺序计算，无法验证时不计算。</li><li>默认排序仅使用所有用户可直接获得、且当前可核验的条件。会员、新人、以旧换新、分期、地区补贴、凑单满减等单独标“条件价”，用户明确符合条件后才参与对应排序。</li><li>优惠卡展示领取方式、门槛、截止时间和可用依据。运费、强制费用或优惠资格未知时标为“价格待确认”，不与完整到手价混排。</li><li>二手商品独立分组，按型号、成色、保修、配件和卖家说明比较；成色不一致时明确提示差异，不输出跨成色的统一最低价。</li><li>多件商品同时展示总到手价与单位价，默认比较用户指定数量的总价；不得仅凭单位价推荐超出购买数量的套装。</li></ul>
+<div class="formula">可比较到手价 = 当前商品 / 套餐报价 + 必付配送费 + 包装费 + 服务费及其他必付费用 − 本次尚未扣除的可核验优惠<br>单位价 = 可比较到手价 ÷ 相同计量单位数量（仅支持可明确换算的规格）</div>
+<ul><li>当前报价已扣除的折扣不得再次减免；每项优惠标记是否已含在报价内。优惠按平台规定的门槛基数、互斥、叠加、封顶、适用顺序及逐步取整规则计算；无法验证的优惠不计入已确认价。</li><li>默认排序仅使用所有用户可直接获得、且当前可核验的条件。会员、新人、以旧换新、分期、地区补贴、凑单满减等单独标“条件价”，用户明确符合条件且规则及权益已核验后才参与对应排序。未持有券但可领取的方案另列“领券后条件价”，领券成功且仍有效后方可作为已确认价。仅口头确认资格不能证明券库存、可用性和可叠加性。</li><li>优惠卡展示领取方式、门槛、截止时间和可用依据。运费、强制费用或优惠资格未知时标为“价格待确认”，不与完整到手价混排。</li><li>二手商品独立分组，按型号、成色、保修、配件和卖家说明比较；成色不一致时明确提示差异，不输出跨成色的统一最低价。</li><li>多件商品同时展示总到手价与单位价，默认比较用户指定数量的总价；不得仅凭单位价推荐超出购买数量的套装。</li></ul>
 <div class="table-wrap"><table><thead><tr><th>ID</th><th>需求</th><th>结果要求</th></tr></thead><tbody>
 <tr><td>C-01 并发查询</td><td>对已启用且支持当前品类的平台发起查询</td><td>逐个平台展示等待 / 成功 / 无结果 / 超时 / 不支持；部分完成即可显示已有结果，单平台失败不阻塞整体。</td></tr>
 <tr><td>C-02 商品卡片</td><td>提供可判断是否同款的信息</td><td>商品标题、图片（有来源时）、关键规格、平台、店铺 / 卖家、全新 / 成色、保修、库存 / 地区限制、商品价、费用、优惠、到手价、采集时间和来源链接。</td></tr>
@@ -116,20 +125,36 @@
 <tr><td>C-05 来源与新鲜度</td><td>报价必须可追溯</td><td>展示北京时间时间戳与直达链接；默认缓存有效期建议 15 分钟，过期标记且移出有效最低价。可重新查询；平台要求更短有效期时以更短值为准。</td></tr>
 <tr><td>C-06 用户行动</td><td>点击跳转查看原商品</td><td>跳转前展示“价格与库存以商品页及结算页为准”；不代购、不代付。已失效或明确下架链接停用并允许重新搜索。</td></tr>
 <tr><td>C-07 异常报价</td><td>处理缺价、极低价和不一致</td><td>无来源、库存未知、运费未知、标题与规格矛盾等转待确认；明显异常低价需二次验证规格、数量和费用。只有单条候选时不依赖统计异常判断，按完整性规则审核。</td></tr>
+<tr><td>C-08 优惠方案</td><td>输出规则约束下的最低已确认方案</td><td>逐项解释优惠基数、顺序、互斥、资格、领取状态与有效期；付费获取权益的支出另列。规则或证据缺失时显示待确认，不声称可复现最低价。</td></tr>
+<tr><td>C-09 生活服务</td><td>按实际门店与服务条件比较</td><td>保存门店映射证据、套餐内容、人数 / 数量、履约方式、使用时段、预约与退款规则、配送 / 包装及必付费用。可用性与内容不一致的结果不混排。</td></tr>
+<tr><td>C-10 场景覆盖</td><td>查询与降级按业务场景判断</td><td>支持某平台电商不等于支持其外卖或团购；逐一披露场景和区域覆盖，未接入生活服务时明确提示，不返回编造的生活服务报价。</td></tr>
 </tbody></table></div>
+<h3>平台优惠规则：从券列表到可执行方案</h3>
+<div class="flow"><div><b>01</b>获取报价及规则证据</div><i>→</i><div><b>02</b>校验范围 / 资格 / 时间</div><i>→</i><div><b>03</b>生成允许的组合</div><i>→</i><div><b>04</b>按平台顺序逐步计算</div><i>→</i><div><b>05</b>输出最低有效方案</div></div>
+<div class="table-wrap"><table><thead><tr><th>规则维度</th><th>P0 要求</th></tr></thead><tbody>
+<tr><td>优惠类型与归属</td><td>区分平台券、店铺券、商品券、满减 / 折扣、配送券、会员 / 新人权益和支付优惠；类型不代表可叠加，必须有具体规则。首版只对已验证的规则模板计算。</td></tr>
+<tr><td>门槛与适用范围</td><td>记录满减金额、计价基数（优惠前 / 优惠后、是否含包装配送等）、指定平台 / 门店 / SKU / 类目 / 地区 / 时段、人数 / 数量及使用次数；不满足门槛则不可用。</td></tr>
+<tr><td>叠加与互斥</td><td>记录叠加白名单、互斥组、每单使用次数、计算顺序、折扣上限及分级取整；在给定购物篮中枚举或求解有效组合，不能把所有面额直接相加。规则未知不假定可叠加；超出支持模板则降级为待确认，不声称最优。</td></tr>
+<tr><td>优惠状态</td><td>分别记录未领取、已领取、已使用、已过期、库存未知、资格待确认。未满足条件的低价可展示为条件方案，注明阻碍与下一步，不进入默认已确认价排序。</td></tr>
+<tr><td>增量支出</td><td>需要新开会员、购买券包或追加商品时，单独列出额外支出、订单总付款与用户原需求。未有明确可用权益证据时，不把付费券包中的券当作免费券；不以分摊后的单件低价掩盖更高总支出。首版不自动推荐凑单。</td></tr>
+<tr><td>非即时折扣</td><td>积分、后返红包、返现、未来抵扣等不从本次付款中直接减除；作为待获得权益另列，不承诺其折现价值。</td></tr>
+<tr><td>可解释与新鲜度</td><td>给出原价、必付费用、逐项优惠、所用组合、不可用原因、领取 / 使用步骤、有效期、证据来源和规则版本。最终有效期取报价、优惠及资格证据过期时间中的最早值；变化后重新核验与排序。</td></tr>
+</tbody></table></div>
+<p><strong>结果分层：</strong>默认已确认价、已核验资格下的个性化价、领券 / 开会员等条件方案、规则待确认。所有排序结论均注明采用的资格与履约条件；价格未知不能当作零。系统提供操作指引，不自动代领券、开会员或下单。</p>
 <h3>比价计算示例（虚构数据）</h3>
 <div class="table-wrap"><table><thead><tr><th>候选</th><th>费用结构</th><th>比较结果</th></tr></thead><tbody><tr><td>平台 A · 全新同规格</td><td>¥599 + 运费 ¥0 − 可核验通用券 ¥20</td><td><strong>¥579，默认最低已确认价</strong></td></tr><tr><td>平台 B · 全新同规格</td><td>¥569 + 运费 ¥15</td><td>¥584，参与默认排序</td></tr><tr><td>平台 C · 新人专享</td><td>¥549，免运；需从未下单</td><td>条件价 ¥549，资格未确认时不参与默认排序</td></tr><tr><td>平台 D · 二手九成新</td><td>¥399 + 运费 ¥10</td><td>¥409，单独二手分组</td></tr></tbody></table></div>
 </section>
 
 <section id="platforms">
-<h2><em>07</em>电商平台表单与接入管理</h2>
+<h2><em>07</em>比价平台表单与接入管理</h2>
 <p>平台维护放在管理员后台；普通用户可以查看本次搜索的平台范围并选择查询平台。<strong>新增一行平台配置并不等于完成接入</strong>，可执行查询还需对应适配器、授权及联调验证。</p>
 <div class="table-wrap"><table><thead><tr><th>字段</th><th>要求</th><th>用途</th></tr></thead><tbody>
 <tr><td>平台 ID / 展示名称</td><td>必填、ID 唯一</td><td>例如 pdd / 拼多多；展示名可编辑，ID 创建后不可随意修改</td></tr>
-<tr><td>平台类型 / 支持品类</td><td>必填</td><td>全新 / 二手 / 综合；支持的商品类别及地区</td></tr>
+<tr><td>平台类型 / 支持品类</td><td>必填</td><td>分别维护平台类型（电商 / 生活服务 / 综合）、业务场景（电商实物 / 即时零售 / 外卖 / 自提 / 到店团购）、新旧支持、品类和服务城市 / 门店</td></tr>
 <tr><td>接入方式 / 适配器</td><td>启用前必填</td><td>官方或授权 API、用户授权连接等；填写已有适配器标识，不能任意执行脚本</td></tr>
 <tr><td>凭据引用 / 配额 / 超时</td><td>按接入方式填写</td><td>凭据存于服务端密钥系统，仅展示引用和掩码；限流与超时有默认值</td></tr>
-<tr><td>价格 / 库存能力</td><td>必填</td><td>是否返回运费、券条件、库存、成色、直达链接；能力不足时降级展示</td></tr>
+<tr><td>价格 / 库存能力</td><td>必填</td><td>是否返回配送 / 包装 / 服务费、门店 / 套餐、可预约时段、券状态与规则、库存 / 可售性、成色、直达链接；能力按场景记录，缺失则降级</td></tr>
+<tr><td>优惠规则模板 / 版本</td><td>可计算优惠前必填</td><td>规则来源、适用场景、门槛基数、计算顺序、互斥 / 叠加、资格、领取状态、失效时间、验证用例与最近核验时间；不可按平台名硬编码“所有券都能用”</td></tr>
 <tr><td>链接域名白名单</td><td>启用前必填</td><td>只允许跳转与请求已审核域名，禁止访问内网和任意地址</td></tr>
 <tr><td>状态 / 排序 / 缓存 TTL</td><td>必填</td><td>未配置、待验证、已启用、已停用、异常；控制搜索范围与展示次序</td></tr>
 <tr><td>最近测试时间 / 结果</td><td>系统生成</td><td>检查授权、响应字段、限流及示例报价；失败不得启用</td></tr>
@@ -137,6 +162,8 @@
 <h3>候选平台初始化</h3>
 <div class="table-wrap"><table><thead><tr><th>平台</th><th>计划比较范围</th><th>初始状态</th><th>启用前验证</th></tr></thead><tbody>
 <tr><td>拼多多</td><td>全新商品及可核验优惠</td><td><span class="tag wait">待接入验证</span></td><td>数据授权、规格、优惠、运费与库存</td></tr><tr><td>淘宝</td><td>全新商品；店铺信息可区分</td><td><span class="tag wait">待接入验证</span></td><td>数据授权、店铺、SKU、价格完整性</td></tr><tr><td>京东</td><td>全新商品；店铺信息可区分</td><td><span class="tag wait">待接入验证</span></td><td>数据授权、地区价格、运费与库存</td></tr><tr><td>闲鱼</td><td>二手商品，按成色与配件分组</td><td><span class="tag wait">待接入验证</span></td><td>数据授权、可售性、成色、卖家与运费</td></tr><tr><td>得物</td><td>按可获取的具体规格与费用比较</td><td><span class="tag wait">待接入验证</span></td><td>数据授权、SKU、必要服务费与购买条件</td></tr>
+<tr><td>美团</td><td>外卖、即时零售、到店团购按业务独立验证</td><td><span class="tag wait">待接入验证</span></td><td>数据授权、地区 / 实际门店、履约方式、费用、套餐 / 时段、券规则及资格证据</td></tr>
+<tr><td>大众点评及其他生活服务 App</td><td>到店套餐 / 服务等候选场景；逐平台验证</td><td><span class="tag wait">待接入验证</span></td><td>数据授权、门店与报价来源去重、套餐内容、人数、预约 / 有效期 / 退款条件及优惠规则</td></tr>
 </tbody></table></div>
 <p class="caption">以上是需求候选清单，不表示已确认这些平台具备可用接口或已取得授权。具体能力、费用和使用条件由接入调研确定。</p>
 <div class="callout warn">没有可用接入时显示“该平台暂未接入”；可以提供站内搜索跳转，但跳转入口不作为有效报价，不参与最低价计算。首版不依赖绕过验证码、登录限制或访问控制获取数据。</div>
@@ -144,7 +171,7 @@
 
 <section id="screens">
 <h2><em>08</em>信息架构与关键页面</h2>
-<p>主导航：<strong>资产总览 / 导入账单 / 商品比价</strong>；次级入口：待确认、资产详情、导入历史、设置。管理员另有电商平台管理入口。下方为 PRD 交互示意，数据均为虚构，不是已实现的产品功能。</p>
+<p>主导航：<strong>资产总览 / 导入账单 / 商品比价</strong>；次级入口：待确认、资产详情、导入历史、设置。管理员另有比价平台管理入口。下方为 PRD 交互示意，数据均为虚构，不是已实现的产品功能。</p>
 <h3>页面 A · 资产总览</h3>
 <div class="mock" role="img" aria-label="资产总览界面示意：净成本 990 元，2 件资产，汇总日均成本 33 元，待确认 3 项">
 <div class="mock-top"><div class="mock-title">我的生活资产</div><span class="mock-action">＋ 导入账单</span></div>
@@ -165,13 +192,22 @@
 <p class="caption">结论仅覆盖本次成功查询且满足筛选条件的报价；实际价格以结算页为准。</p>
 </div>
 <p class="small"><strong>空 / 错误状态：</strong>名称太泛时要求补全；没有同款时展示“无符合条件报价”并允许改规格；部分超时展示已有结果和缺失平台；全部失败提供重试；过期显示刷新入口；同价展示并列最低。</p>
+<h3>页面 B 增补 · 优惠与生活服务筛选</h3>
+<p>比价入口增加“商品购物 / 即时零售 / 外卖 / 到店服务”场景选择，按场景展示城市、实际门店、配送或自提、规格 / 套餐、人数、使用日期时段、会员 / 新人资格。优惠抽屉列出券状态、可用组合、资格证据和费用计算步骤，并允许切换“当前可用价 / 条件方案”。</p>
+<div class="mock" role="img" aria-label="生活服务比价需求示意：同门店双人套餐，优惠后 158 元，仅含必付费用完整和条件相同的报价参与排序">
+<div class="mock-top"><div class="mock-title">生活服务 · 同条件比较</div><span class="tag">虚构需求示例</span></div>
+<div class="search-demo">上海 · 门店甲 · 双人套餐 S · 周六晚餐 · 到店 · 2 人</div>
+<div class="mock-row"><div><strong>生活平台 A · 已确认方案</strong><br><span class="caption">套餐 ¥188 + 必付服务费 ¥10 − 已领取且可用平台券 ¥40<br>券门槛按套餐报价计算，服务费不计入门槛 · 本例券可用于套餐 S</span></div><div class="mock-price">¥158</div></div>
+<div class="mock-row"><div><strong>生活平台 B · 同门店同套餐</strong><br><span class="caption">套餐 ¥169 + 必付服务费 ¥10，无可核验优惠<br>同人数、相同时段与预约 / 退款条件</span></div><div class="mock-price">¥179</div></div>
+<p class="caption">不同门店或仅工作日可用的同名套餐单列为替代方案；以上非任何真实平台规则或现价。</p>
+</div>
 <h3>其余页面清单</h3>
 <div class="table-wrap"><table><thead><tr><th>页面</th><th>核心内容</th><th>关键操作</th></tr></thead><tbody><tr><td>账单导入向导</td><td>文件、映射、预览、处理进度、批次结果</td><td>修正映射、确认导入、下载错误报告、撤销批次</td></tr><tr><td>待确认工作台</td><td>原始交易、识别建议、冲突原因、置信信息</td><td>加入资产、改为普通消费、关联退款、保留 / 合并重复项</td></tr><tr><td>资产详情</td><td>字段、成本公式、来源交易、修改历史</td><td>编辑、拆分、结束持有、删除 / 恢复</td></tr><tr><td>平台管理</td><td>平台列表、配置表单、接入状态、健康度</td><td>新增、修改、测试、启停；停用不删除历史报价来源</td></tr></tbody></table></div>
 </section>
 
 <section id="agent">
 <h2><em>09</em>Agent 分工与行为边界</h2>
-<div class="table-wrap"><table><thead><tr><th>任务</th><th>Agent 负责</th><th>确定性服务负责</th></tr></thead><tbody><tr><td>账单理解</td><td>描述归类、提取商品线索、生成待确认原因</td><td>解析、金额校验、幂等、去重、退款记账、数据库写入</td></tr><tr><td>资产成本</td><td>用自然语言解释公式和变化</td><td>所有金额 / 日期计算、状态转换、汇总与审计</td></tr><tr><td>商品比价</td><td>理解意图、补全关键规格、辅助候选匹配</td><td>平台调用、字段验证、费用计算、有效性检查、排序</td></tr></tbody></table></div>
+<div class="table-wrap"><table><thead><tr><th>任务</th><th>Agent 负责</th><th>确定性服务负责</th></tr></thead><tbody><tr><td>账单理解</td><td>描述归类、提取商品线索、生成待确认原因</td><td>解析、金额校验、幂等、去重、退款记账、数据库写入</td></tr><tr><td>资产成本</td><td>用自然语言解释公式和变化</td><td>所有金额 / 日期计算、状态转换、汇总与审计</td></tr><tr><td>商品比价</td><td>理解意图、补全关键规格、辅助候选匹配</td><td>平台与场景调用、门店映射校验、优惠组合约束求解、费用计算、资格 / 时效检查、排序</td></tr></tbody></table></div>
 <ul><li>模型输出必须符合结构化字段约束；无法确定时返回空值、原因和待确认标记，不补造缺失事实。</li><li>每条资产有原始交易证据；每条报价有真实来源链接和时间。失败时如实标记，不用语言模型生成平台价格填空。</li><li>账单文本和平台商品描述属于外部数据；其中的指令不能改变系统规则、读取用户其他数据或触发任意工具。</li><li>导入预览提交后，可在声明的规则内自动入库；金额冲突、跨源重复、模糊商品和退款歧义需人工处理。删除数据或撤销有冲突批次须展示影响。</li><li>价格推荐只依据用户条件与可核验到手价；如未来有推广关系需显著披露，不能覆盖默认价格排序。</li></ul>
 </section>
 
@@ -183,12 +219,14 @@
 <tr><td>Asset</td><td>id、user_id、name、category、quantity、purchase_amount_fen、start_date、end_date、status、review_status、deleted_at</td><td>日均成本为计算值；手动资产允许无来源；数量及成本变更需守恒</td></tr>
 <tr><td>AssetTransaction</td><td>asset_id、transaction_id、allocated_amount_fen、role</td><td>支持一笔订单拆多个资产，也支持支付 / 退款归属同一资产；role 为买入 / 退款等</td></tr>
 <tr><td>RefundAllocation</td><td>refund_transaction_id、original_transaction_id、asset_id、amount_fen、reason、confirmed_at</td><td>退款不可重复分配；退款累计校验通过后影响净成本</td></tr>
-<tr><td>Platform</td><td>id、name、type、adapter_id、credential_ref、domains、capabilities、status、sort_order、ttl、last_test</td><td>管理员维护；不存储明文密钥；报价来源引用平台 ID</td></tr>
-<tr><td>SearchSession</td><td>id、user_id、query、normalized_specs、region、condition、requested_quantity、platform_statuses、created_at</td><td>保留搜索范围和过滤条件，便于解释最低价范围</td></tr>
-<tr><td>Offer</td><td>session_id、platform_id、title、sku、condition、seller、url、base_price_fen、shipping_fen、fees_fen、discounts、eligibility、stock、fetched_at、expires_at、match_status</td><td>金额 / 库存未知用 null，不能用 0 替代；归一化价格包含计算明细和验证状态</td></tr>
+<tr><td>Platform</td><td>id、name、platform_type、scenarios、regions、adapter_id、credential_ref、domains、capabilities_by_scenario、promotion_rule_version、status、sort_order、ttl、last_test</td><td>管理员维护；不存储明文密钥；报价来源引用平台 ID</td></tr>
+<tr><td>SearchSession</td><td>id、user_id、query、scenario、normalized_specs、region、store_id、fulfillment、use_time、party_size、condition、requested_quantity、eligibility_context、platform_statuses、created_at</td><td>保留搜索范围和过滤条件，便于解释最低价范围</td></tr>
+<tr><td>Offer</td><td>session_id、platform_id、scenario、source_offer_id、canonical_store_id、title、sku_or_package、contents、condition、fulfillment、use_window、booking_and_refund_terms、url、base_price_fen、mandatory_fee_items、applied_discount_ids、eligibility、availability、fetched_at、expires_at、match_status</td><td>金额 / 库存未知用 null，不能用 0 替代；归一化价格包含计算明细和验证状态</td></tr>
+<tr><td>PromotionRule</td><td>id、platform_id、scenario、scope、type、threshold_basis、threshold_fen、discount_or_rate、cap_fen、rounding、stacking_group、compatibility、apply_order、eligibility、claim_state、valid_window、source、verified_at、version</td><td>具体规则与券状态分离保存；未知字段不得由模型猜测；券的个人状态按用户隔离</td></tr>
+<tr><td>PricePlan</td><td>offer_id、basket_snapshot、rule_versions、qualification_evidence、applied_steps、excluded_rule_reasons、extra_acquisition_cost_fen、payable_fen、plan_status、expires_at</td><td>保存已含折扣与未扣优惠的逐步计算、互斥组合选择和证据；支持复算与条件变更失效</td></tr>
 <tr><td>AuditLog</td><td>actor、entity、action、before_after、reason、timestamp</td><td>记录人工修正、自动入库、退款关联、平台配置和删除操作；不记录密钥</td></tr>
 </tbody></table></div>
-<p class="small"><strong>逻辑服务：</strong>导入解析 → 交易标准化 → 资产识别 / 待确认 → 成本引擎；搜索解析 → 平台适配器 → 商品匹配 → 费用归一化 → 结果排序。用户数据全程按 user_id 隔离；管理员的平台配置权限与个人账单访问权限分离。</p>
+<p class="small"><strong>逻辑服务：</strong>导入解析 → 交易标准化 → 资产识别 / 待确认 → 成本引擎；搜索解析 → 平台适配器 → 商品 / 服务条件匹配 → 优惠规则与资格校验 → 有效组合求解 → 必付费用归一化 → 分组排序。用户数据全程按 user_id 隔离；管理员的平台配置权限与个人账单访问权限分离。</p>
 </section>
 
 <section id="quality">
@@ -221,8 +259,14 @@
 <tr><td>AT-10</td><td>4 个平台中 1 个超时、1 个无结果、2 个成功；之后全部失败</td><td>前者保留有效比较并披露覆盖；后者不输出价格结论，给出失败状态与重试；仅一平台有效时提示无法跨平台比较。</td></tr>
 <tr><td>AT-11</td><td>管理员新增候选平台配置并尝试启用</td><td>未完成适配器 / 授权 / 必填配置或测试失败时不可启用；成功后进入搜索范围；停用后新查询不再调用。</td></tr>
 <tr><td>AT-12</td><td>账单文字含“忽略指令”；用户尝试访问他人资产；撤销有后续编辑的导入批次</td><td>账单文本只作数据；跨用户访问被拒绝；批次撤销先展示冲突，不能静默覆盖后续编辑。</td></tr>
+<tr><td>AT-13</td><td>虚构平台：商品 ¥200，平台券满 ¥180 减 ¥30、店铺券满 ¥150 减 ¥20，明确互斥，免配送费</td><td>最低有效方案 ¥170，不能错误叠加为 ¥150；显示被排除的券及互斥理由。</td></tr>
+<tr><td>AT-14</td><td>虚构平台：¥200 商品 + ¥8 配送 + ¥2 包装；先用店铺券减 ¥20，再按折后商品满 ¥180 减 ¥30；费用不计门槛，两券明确可叠加</td><td>¥200 − ¥20 − ¥30 + ¥8 + ¥2 = ¥160；若商品改为 ¥199，先用店铺券会使折后 ¥179 不达平台券门槛，方案为 ¥189；但单用平台券可得 ¥179，应选后者，不能固定贪心选券。各步可复算。</td></tr>
+<tr><td>AT-15</td><td>虚构券未领取 / 已过期 / 资格未知；或需花 ¥15 购买券包才能获得 ¥20 券</td><td>不能当作免费且已可用的优惠参与默认最低价；显示领取状态、额外 ¥15 支出和条件方案。已核验领取并有效后重算；不能扣除未来返还权益。</td></tr>
+<tr><td>AT-16</td><td>同门店双人套餐、同使用时段：A 报价 ¥188 + 服务费 ¥10 − 可用券 ¥40；B 报价 ¥169 + 服务费 ¥10</td><td>A 到店总价 ¥158，B 为 ¥179；不同门店、工作日限定、不同人数、必付费未知或退款条件不同的套餐不进入该组最低价。</td></tr>
+<tr><td>AT-17</td><td>相同菜品分别是外卖、自提或不同分店；券在查询中到期；仅接入电商数据</td><td>默认按门店和履约方式分组；到期方案失效并重算；电商成功不代表生活服务已接入，显示场景不可用，不编造结果。</td></tr>
+<tr><td>AT-18</td><td>当前报价已包含 ¥20 折扣；规则缺少叠加顺序；同一底层报价出现在两个 App 入口</td><td>折扣不再重复扣减；规则不完整的优惠标待确认；来源去重后不把镜像报价算作两个独立平台覆盖。</td></tr>
 </tbody></table></div>
-<div class="callout"><span class="check">上线检查：</span>全部 P0 用例通过；资产金额与日期边界可由固定样例复算；至少两平台真实接入验证通过；推荐价格均能追溯到有效来源；权限隔离与删除机制完成验证。</div>
+<div class="callout"><span class="check">上线检查：</span>全部 P0 用例通过；资产金额与日期边界可由固定样例复算；每个公开支持场景至少两独立平台验证通过，AT-13 至 AT-18 通过；推荐价格均能追溯到有效来源；权限隔离与删除机制完成验证。</div>
 </section>
 
 <section id="metrics">
@@ -232,10 +276,11 @@
 <tr><td>导入完成率</td><td>成功或部分成功的已提交批次 / 全部已提交批次</td><td>支持格式 ≥ 95%；取消和不支持文件单列</td></tr>
 <tr><td>自动入库准确率</td><td>人工标注为正确的自动入库资产 / 抽检自动入库资产</td><td>≥ 98%；上线前按来源 / 品类构建标注集，覆盖难例</td></tr>
 <tr><td>自动覆盖率</td><td>自动正确入库资产 / 标注集所有可识别资产</td><td>先建立基线；与准确率同时看，避免全部待确认</td></tr>
-<tr><td>有效比价覆盖率</td><td>至少两个平台有同款有效报价的已完成查询 / 所有已完成支持范围查询</td><td>内测建立基线；平台或品类不支持的请求另列</td></tr>
-<tr><td>推荐价一致率</td><td>同时间、地区、SKU、资格下，结算可复现到手价的抽检推荐 / 全部抽检推荐</td><td>≥ 95%，保留误差原因和采集时间差</td></tr>
+<tr><td>有效比价覆盖率</td><td>至少两个独立平台有同款 / 同门店同服务条件有效报价的已完成查询 / 所有已完成支持范围查询；按电商、即时零售、外卖、到店分别统计</td><td>内测建立基线；平台或品类不支持的请求另列</td></tr>
+<tr><td>推荐价一致率</td><td>同时间、地区、SKU / 门店套餐、履约方式、资格及规则版本下，结算可复现到手价的抽检推荐 / 全部抽检推荐</td><td>≥ 95%，保留误差原因和采集时间差</td></tr>
+<tr><td>优惠规则覆盖与复算</td><td>支持且已验证规则模板覆盖的报价比例；可复算且与结算一致的优惠方案比例；单列待领券 / 资格未知 / 规则缺失比例</td><td>分平台与场景建立基线，不能用放弃识别优惠来提高价格一致率</td></tr>
 <tr><td>结果行动率</td><td>点击有效来源商品的查询会话 / 有有效报价会话</td><td>观察指标，不等于成交或实际节省</td></tr>
-<tr><td>可见价差</td><td>同一会话相同条件下的最高已确认到手价 − 最低已确认到手价</td><td>标为“本次报价差”，不累计为“已省金额”</td></tr>
+<tr><td>可见价差</td><td>同一会话、同场景、同商品或服务条件及资格下的最高已确认到手价 − 最低已确认到手价</td><td>标为“本次报价差”，不累计为“已省金额”</td></tr>
 </tbody></table></div>
 <p class="small"><strong>建议事件：</strong><code>bill_upload</code>、<code>import_submit</code>、<code>import_complete</code>、<code>asset_auto_created</code>、<code>asset_corrected</code>、<code>review_resolved</code>、<code>comparison_started</code>、<code>platform_query_finished</code>、<code>comparison_completed</code>、<code>offer_clicked</code>。仅上传必要的匿名 ID、状态、数量与耗时，不采集原始账单、完整查询文本和商品页中的个人信息。</p>
 </section>
@@ -243,23 +288,25 @@
 <section id="delivery">
 <h2><em>14</em>实施顺序、依赖与待定项</h2>
 <div class="table-wrap"><table><thead><tr><th>阶段</th><th>交付内容</th><th>完成判定</th></tr></thead><tbody>
-<tr><td>M0 · 可行性验证</td><td>收集脱敏账单样例、确认首批字段模板；验证至少两个平台的授权与可用字段</td><td>形成实际支持矩阵与接入成本；不把模拟报价作为接入成功</td></tr>
+<tr><td>M0 · 可行性验证</td><td>收集脱敏账单样例、确认首批字段模板；验证电商和生活服务候选平台的授权、门店映射、优惠证据与可用字段</td><td>形成实际支持矩阵与接入成本；不把模拟报价作为接入成功</td></tr>
 <tr><td>M1 · 资产闭环</td><td>导入、校验、识别、待确认、资产建档、退款、成本与批次追踪</td><td>AT-01 至 AT-07 及相关安全用例通过</td></tr>
-<tr><td>M2 · 比价闭环</td><td>平台管理、适配器、搜索解析、同款匹配、费用计算与来源跳转</td><td>AT-08 至 AT-11 通过；至少两平台真实数据可复现</td></tr>
+<tr><td>M2 · 比价闭环</td><td>电商与生活服务平台配置、场景与门店匹配、优惠规则模板 / 组合求解、必付费用、来源跳转</td><td>AT-08 至 AT-11、AT-13 至 AT-18 通过；每个公开支持场景至少两个独立平台的真实数据可复现</td></tr>
 <tr><td>M3 · 小范围内测</td><td>异常恢复、权限与删除、可观测性、指标基线、价格抽检</td><td>全部 P0 验收通过；明确可查询平台、品类与限制后开放使用</td></tr>
 </tbody></table></div>
 <h3>需要后续评审确认的事项</h3>
 <div class="table-wrap"><table><thead><tr><th>事项</th><th>本稿默认方案</th><th>影响 / 责任角色</th></tr></thead><tbody>
 <tr><td>账单来源</td><td>CSV / XLSX 通用映射，先按实际样例增加固定模板</td><td>用户提供脱敏样例后确定覆盖；产品 / 研发</td></tr>
 <tr><td>自动入库阈值</td><td>高置信度自动加入，其余待确认；金额冲突硬拦截</td><td>根据标注集校准；产品 / 算法</td></tr>
-<tr><td>首批电商平台</td><td>候选池 5 个，优先选择授权与数据完整度满足要求的 2 个</td><td>决定首版比价覆盖与上线周期；接入研发 / 产品</td></tr>
+<tr><td>首批比价平台 / 场景</td><td>电商候选 5 个，加美团及其他生活服务 App；电商与生活服务分组验证，优先完成数据及优惠证据完整的场景</td><td>决定首版比价覆盖与上线周期；接入研发 / 产品</td></tr>
+<tr><td>生活服务切入点</td><td>到店团购、外卖、即时零售均纳入范围；建议先验证同门店到店套餐，具体顺序由授权与可比性决定</td><td>避免承诺一次覆盖所有服务；产品 / 接入研发</td></tr>
+<tr><td>优惠规则基线</td><td>先落地已验证的券、满减与配送优惠；不支持的复杂活动明确降级</td><td>收集规则样例与反例、维护版本和回归用例；产品 / 研发</td></tr>
 <tr><td>账户与部署</td><td>单人账户隔离、响应式 Web、管理员后台</td><td>选择认证方式与存储环境；研发</td></tr>
 <tr><td>资源预算</td><td>平台调用限额、模型识别异步、报价短时缓存</td><td>确认日调用量、模型费用和服务预算；产品 / 研发</td></tr>
 <tr><td>物品范围</td><td>耐用品和可长期使用衣物；耗材、服务、订阅不自动转资产</td><td>分类白名单可配置；产品</td></tr>
 </tbody></table></div>
-<div class="callout"><strong>首版完成定义：</strong>用户能够导入一份真实账单，获得可修正且成本准确的资产清单；输入一个支持范围内的商品，获得至少两个平台的同规格报价和可追溯的最低已确认到手价。其他平台和增强功能后续逐步扩展。</div>
+<div class="callout"><strong>首版完成定义：</strong>用户能够导入一份真实账单，获得可修正且成本准确的资产清单；输入支持范围内的商品或生活服务，在所选场景获得至少两个独立平台的同规格 / 同服务条件报价、按平台优惠规则计算的最低已确认到手价，以及领取和使用步骤。商品与生活服务分别通过验收；未接入场景如实标记并逐步扩展。</div>
 </section>
-<div class="footer"><span>省点 · 生活省钱 Agent · PRD v1.0 · 需求评审稿</span><span>2026.10.20 / Asia · Shanghai</span></div>
+<div class="footer"><span>省点 · 生活省钱 Agent · PRD v1.1 · 需求评审稿</span><span>2026.10.25 / Asia · Shanghai</span></div>
 </main>
 </div>
 </body>
