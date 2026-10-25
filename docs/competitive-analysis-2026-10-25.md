@@ -10,7 +10,7 @@
 | --- | --- | --- |
 | 输入名称，跨平台找低价 | 慢慢买公开介绍了商品搜索与优惠到手价计算。[服务说明](https://help.manmanbuy.com/default.aspx?id=44069) | 基础能力，需要做准，但不能单独承担差异化。 |
 | 用 AI 帮用户购买决策 | 什么值得买“小值”官方介绍了对话理解需求、商品比较和比价。[官方介绍](https://ailab.smzdm.com/) | “用了 Agent”不是充分理由，应衡量少做了多少人工核对。 |
-| 从电商扩到生活类 App | 返利 App 的开发者介绍已包含购物与生活优惠。[应用介绍](https://play.google.com/store/apps/details?hl=zh&id=com.fanli.android.apps.gp) | 生活服务值得验证，但“有生活优惠入口”不是空白。 |
+| 从电商扩到生活类 App | 返利 App 的开发者介绍已包含购物与生活优惠。[应用介绍](https://app.mi.com/details?id=com.fanli.android.apps) | 生活服务值得验证，但“有生活优惠入口”不是空白。 |
 | 日均成本管理 | “与物”开发者介绍已包含持有日均成本、单次使用成本及物品状态管理。[App Store](https://apps.apple.com/cn/app/与物-物品资产管理与日均成本/id6757421355) | 日均成本不是独有功能；自动建档准确性与购前购后衔接值得验证。 |
 
 **建议定位假设：省点替用户核对“我现在能不能用、这笔实际付多少、为什么这样买”。** 输出应包含购买条件、费用明细、有效优惠组合、证据与时间，必要时明确“暂时无法判断”。这一方向仍需实测竞争产品和用户任务，不能宣布竞品都做不到。
@@ -35,7 +35,7 @@
 | 慢慢买 | 商品搜索、比价、优惠到手价、历史价、降价通知 | 官方帮助页。[来源](https://help.manmanbuy.com/default.aspx?id=44069) | 当前同 SKU 匹配、个人券资格、优惠复现率与服务范围。 |
 | 什么值得买 / 小值 | 消费内容、好价、AI 建议与比价 | 官方应用介绍与小值页面摘要。[应用](https://play.google.com/store/apps/details?id=com.smzdm.client.android) · [小值](https://ailab.smzdm.com/) | 对具体个人账户权益、规则冲突和生活套餐的处理。 |
 | 一淘 | 购物导购与集分宝返利，返利金额与到账有规则 | 官方返利 FAQ。[来源](https://mo.m.etao.com/etao/shoppingchart_question) | 当前可用商城、活动覆盖、跟单与售后实际体验。 |
-| 返利 App | 领券、返利、购物及多种生活优惠 | 开发者介绍及官方帮助。[应用](https://play.google.com/store/apps/details?hl=zh&id=com.fanli.android.apps.gp) · [规则](https://help.fanli.com/a/shangchengfanlilei/) | 生活优惠究竟是入口聚合还是同条件跨平台比较。 |
+| 返利 App | 领券、返利、购物及多种生活优惠 | 开发者介绍及官方帮助。[应用](https://app.mi.com/details?id=com.fanli.android.apps) · [规则](https://help.fanli.com/a/shangchengfanlilei/) | 生活优惠究竟是入口聚合还是同条件跨平台比较。 |
 | 美团 | 多生活场景会员权益；优惠受活动资格与范围约束 | 官方会员升级介绍和活动规则样例。[会员介绍](https://www.meituan.com/news/NN240704052008695?source=relativeNews) · [历史案例](https://source.meituan.com/food-delivery/waimai-shenquan) | 当前用户券状态、地区、门店、库存与结算可达性。 |
 | 大众点评 | 门店发现、评价与团购 | 开发者应用介绍。[来源](https://apps.apple.com/cn/app/大众点评-吃喝玩乐指南/id351091731) | 同一门店在不同入口的套餐和权益是否真的相同。 |
 | 抖音生活服务 | 商家 / 商品搜索推荐、团购相关能力 | 官方算法说明与开发文档。[搜索说明](https://lf3-cdn-tos.draftstatic.com/obj/ies-hotsoon-draft/lifeservice-legal/c59c0993-b0d8-4a45-93eb-17619b6a9b9f.html) · [团购能力](https://developer.open-douyin.com/docs/resource/zh-CN/local-life/develop/capability/basic/verify-introduce) | 同门店同套餐覆盖及消费者个性化优惠的可获取性。 |
@@ -187,7 +187,7 @@
 | S2 | [什么值得买：开发者应用介绍](https://play.google.com/store/apps/details?id=com.smzdm.client.android) | 开发者功能描述；未做安装实测。 |
 | S3 | [小值：官方介绍](https://ailab.smzdm.com/) | 检索索引摘要可见，正文抓取失败；不据此判断当前入口可用性或准确率。 |
 | S4 | [一淘：返利订单常见问题](https://mo.m.etao.com/etao/shoppingchart_question) | 正文可读；用于说明返利与付款不同。具体时效以订单当前规则为准。 |
-| S5 | [返利 App：开发者应用介绍](https://play.google.com/store/apps/details?hl=zh&id=com.fanli.android.apps.gp) | 用于购物与生活优惠覆盖的公开声明，不采信宣传规模为研究结果。 |
+| S5 | [返利 App：开发者应用介绍](https://app.mi.com/details?id=com.fanli.android.apps) | 小米商店标明开发者为上海中彦信息科技有限公司、包名 com.fanli.android.apps，隐私政策链接指向 fanli.com。仅使用其覆盖声明，不采信宣传规模为研究结果。 |
 | S6 | [返利网：商城返利帮助](https://help.fanli.com/a/shangchengfanlilei/) | 正文可读；规则随商家不同，未验证每家当前兑现情况。 |
 | S7 | [美团：神会员升级新闻](https://www.meituan.com/news/NN240704052008695?source=relativeNews) | 2024 年历史官方介绍，仅说明其生活场景布局，不能当作当前权益目录。 |
 | S8 | [美团：已结束的外卖神券活动](https://source.meituan.com/food-delivery/waimai-shenquan) | 明示活动 2026-10-18 已结束；只分析规则条件与过期风险，不作实时优惠推荐。 |
